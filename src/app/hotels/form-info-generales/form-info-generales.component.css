@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  gap: 20px;
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  background-color: rgba(235, 235, 235, 0.826);
+  background-color: inherit;
+  padding: 50px 270px 110px 20px;
+  padding: 20px;
+  box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
+  width: 90%;
+  border-radius: 10px;
+}
+
+.custom-icon {
+  color: white;         /* Couleur de l'icône */
+  background-color: black; /* Fond noir */
+  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
+  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
+}
+
+.main-card {
+  flex: 1 1 99%; /* Prend 60% de la largeur */
+  background-color: inherit;
+}
+
+.right-column {
+  flex: 1 1 10%; /* Prend 40% de la largeur */
+  position: relative;
+  background-color: inherit;
+}
+
+.sub-card {
+  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
+}
+
+.sub-card:nth-child(2) {
+  margin-top: -10px; /* Superpose la troisième carte au-dessous de la deuxième */
+  background-color: inherit;
+}
+
+.full-width {
+  width: 70%;
+  /* background-color: #77B5FE; */
+}
+
+
+.map-container {
+  height: 200px; /* Hauteur de la carte */
+  background-color: #f0f0f0; /* Couleur de fond temporaire */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+}
+
+
+#bas{
+  background-color: inherit;
+  margin-top: 20px;
+}
+
+
+#haut{
+  background-color: inherit;
+  margin-top: 10px;
+}
+
+

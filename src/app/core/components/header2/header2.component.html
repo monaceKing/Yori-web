@@ -1,0 +1,52 @@
+<!-- app.component.html -->
+<div class="container">
+    <div class="top-bar">
+      <div class="logo">
+        <img src="assets/img/logo_bleu.png" alt="" height="70" width="100">
+      </div>
+      <div class="dropdown">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <div class="initial-circle">
+            {{ userName.charAt(0) }}
+          </div>
+          <span>{{ userName }}</span>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/page1">Page 1</button>
+          <button mat-menu-item routerLink="/page2">Page 2</button>
+          <button mat-menu-item (click)="logout()">Déconnexion</button>
+        </mat-menu>
+      </div>
+
+    </div>
+
+    <header class="header">
+      <div class="content-left" style="color: white;">
+        <p>
+            Optimisez vos revenus en offrant votre hébergement à des voyageurs venant des quatre coins du globe
+        </p>
+        <p>
+            En publiant En affichant votre hébergement sur notre plateforme en ligne, vous profiterez d'une visibilité renforcée ainsi que d'une gestion simplifiée de vos réservations
+        </p>
+      </div>
+      <mat-card class="card">
+        <!-- Partie 1 : Titre et paragraphe -->
+        <mat-card-title>
+          <h3>Inscrivez-vous gratuitement</h3>
+          <p class="para">Rejoignez notre plateforme pour profiter de tous les avantages !</p>
+        </mat-card-title>
+        <hr>
+        <!-- Partie 2 : Bouton centré -->
+        <mat-card-content>
+          <button mat-raised-button color="primary" class="centered-button">Démarrer maintenant</button>
+        </mat-card-content>
+          <hr>
+        <!-- Partie 3 : H5 et lien -->
+        <mat-card-footer>
+          <h4>Vous avez déjà commencé une inscription ? </h4>
+          <a routerLink="/login">continuer l'inscription</a>
+        </mat-card-footer>
+      </mat-card>
+
+    </header>
+  </div>

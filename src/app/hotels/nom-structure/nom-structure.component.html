@@ -1,0 +1,63 @@
+<div class="container">
+  <!-- Première carte qui prend 60% de la largeur -->
+  <mat-card class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title>Quel est le type de votre établissement?</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Selectionnez le type de votre propriété</mat-label>
+          <mat-select matNativeControl required>
+            <mat-option value="hotel">Hotel</mat-option>
+            <mat-option value="motel">Motel</mat-option>
+            <mat-option value="appartement">Appartement</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nom de l'etablissement</mat-label>
+          <input matInput placeholder="Entrez le nom" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Description de votre établiétablissemen</mat-label>
+          <textarea matInput placeholder="Dites-nous en plus sur votre etablissement"></textarea>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <label id="example-radio-group-label">Combien d'étoiles possède votre établissement ?</label>
+      <!-- <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="favoriteSeason">
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{ season }}
+          <span *ngIf="favoriteSeason === season" class="star-icons">
+            <mat-icon *ngFor="let star of getStarArray()" class="star-icon">star</mat-icon>
+          </span>
+        </mat-radio-button>
+      </mat-radio-group> -->
+      <!-- app.component.html -->
+      <mat-radio-group aria-label="Sélectionnez une option">
+        <mat-radio-button value="na" class="radio-button">
+          N/A
+        </mat-radio-button>
+        <mat-radio-button value="1" class="radio-button">
+          1 étoile <span class="star">⭐</span>
+        </mat-radio-button>
+        <mat-radio-button value="2" class="radio-button">
+          2 étoiles <span class="star">⭐⭐</span>
+        </mat-radio-button>
+        <mat-radio-button value="3" class="radio-button">
+          3 étoiles <span class="star">⭐⭐⭐</span>
+        </mat-radio-button>
+        <mat-radio-button value="4" class="radio-button">
+          4 étoiles <span class="star">⭐⭐⭐⭐</span>
+        </mat-radio-button>
+        <mat-radio-button value="5" class="radio-button">
+          5 étoiles <span class="star">⭐⭐⭐⭐⭐</span>
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-card-footer>
+  </mat-card>
+  </div>

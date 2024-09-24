@@ -1,0 +1,40 @@
+<div class="home-container">
+    <header class="hero-section mat-elevation-z4">
+      <div class="logo-section">
+        <img src="assets/img/logo.png" alt="logo">
+        <div class="button-container">
+          <a *ngIf="showAddEstablishmentButton">
+            <button mat-button class="premier">Ajoutez votre établissement</button>
+          </a>
+          <a *ngIf="showLoginButton" (click)="openLoginDialog()">
+            <button mat-button class="premier2">S'inscrire</button>
+          </a>
+          <a *ngIf="showLoginButton" (click)="openLoginDialog()">
+            <button mat-button class="premier2">Se Connecter</button>
+          </a>
+          <mat-menu #profileMenu="matMenu" class="custom-profile-menu">
+            <button mat-menu-item class="custom-menu-item" [routerLink]="['/espace1']">
+              <mat-icon>location_city</mat-icon>
+              <span>Voir mes établissements</span>
+            </button>
+            <button mat-menu-item class="custom-menu-item" (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Déconnexion</span>
+            </button>
+          </mat-menu>
+
+          <button mat-button [matMenuTriggerFor]="profileMenu" *ngIf="showLogoutButton" class="custom-profile-button">
+            <div class="initial-circle">
+              {{ userName?.charAt(0) || '' }}
+            </div>
+            <span>Bonjour, {{ userName }}</span>
+          </button>
+
+        </div>
+      </div>
+      <div class="text">
+        <h1>Explorer l'Afrique à travers <br>sa biodiversité!</h1>
+      </div>
+    </header>
+  </div>
+

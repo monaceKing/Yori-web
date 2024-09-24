@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 20px;
+  /* background-color: rgba(235, 235, 235, 0.826); */
+  background-color: inherit;
+  padding: 30px 150px 90px 150px;
+}
+
+.main-card {
+  flex: 1 1 50%; /* Prend 60% de la largeur */
+  background-color: rgb(255, 255, 255);
+  /* margin-left: 20px; */
+}

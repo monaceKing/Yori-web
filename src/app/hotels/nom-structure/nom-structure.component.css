@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  gap: 20px;
+  /* background-color: rgba(235, 235, 235, 0.826); */
+  background-color: inherit;
+  padding: 30px 150px 4px 150px;
+
+}
+
+.main-card {
+  flex: 1 1 60%; /* Prend 60% de la largeur */
+  background-color: rgb(255, 255, 255);
+  /* margin-left: 20px; */
+}
+
+.right-column {
+  flex: 1 1 50%; /* Prend 40% de la largeur */
+  position: relative;
+}
+
+.sub-card {
+  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
+}
+
+.sub-card:nth-child(2) {
+  margin-top: -10px; /* Superpose la troisième carte au-dessous de la deuxième */
+}
+
+.full-width {
+  width: 60%;
+}
+
+.map-container {
+  height: 200px; /* Hauteur de la carte */
+  background-color: #fd0000; /* Couleur de fond temporaire */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+}
+
+
+#bas{
+  margin-top: 20px;
+}
+
+
+#haut{
+
+  margin-top: 10px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 60%;
+}
+
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.star-icons {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px; /* Espace entre le texte et les étoiles */
+}
+
+.star-icon {
+  color: gold; /* Couleur des étoiles */
+  font-size: 24px; /* Taille des étoiles */
+  margin-left: 2px; /* Espace entre les étoiles */
+}
+
+mat-card-footer label{
+font-size: 20px;
+font-weight: bold;
+padding-left: 40px;
+}
+
+mat-radio-group{
+  padding-left: 30px;
+}
+
+
+mat-card-title{
+  margin-bottom: 15px;
+}
+
+/* app.component.css */
+.radio-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px; /* Espacement entre les boutons */
+}
+
+.star {
+  margin-left: 4px; /* Espacement entre le texte et les étoiles */
+}

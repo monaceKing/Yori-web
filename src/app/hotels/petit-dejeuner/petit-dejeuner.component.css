@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  margin-left: 90px;
+  margin-bottom: 5px;
+  /* background-color: rgba(235, 235, 235, 0.826); */
+  background-color: inherit;
+  padding: 50px 270px 110px 20px;
+  padding: 20px;
+  box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
+  width: 50%;
+  border-radius: 10px;
+}
+
+
+.main-card{
+  background-color: inherit;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+
+mat-card-header{
+  margin: 20px;
+}
+
+
+.example-radio-group-label{
+  margin: 20px;
+}
+
+mat-card-title{
+  font-weight: 500;
+}
+
+label{
+  font-weight: 500;
+}

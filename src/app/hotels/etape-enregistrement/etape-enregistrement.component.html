@@ -1,0 +1,80 @@
+<div class="container">
+<h3>Informations sur l'hébergement</h3>
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          <mat-card-subtitle>Étape 1</mat-card-subtitle>
+          <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
+          Infos sur l'hébergement
+        </mat-card-title>
+        <a mat-button href="https://www.google.com/" target="_blank">Modifier</a>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Information de votre hébergement, son adresse, ses équipements, etc.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          <mat-card-subtitle>Étape 2</mat-card-subtitle>
+          <mat-icon style="color: rgb(14, 14, 14);">weekend</mat-icon>
+          Infos sur l'hébergement
+        </mat-card-title>
+        <button mat-flat-button class="btn1" [routerLink]="['/info-hotel']">
+          Ajouter une offre
+        </button>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- {{longText}} -->
+      <p>
+        Information de votre hébergement, son adresse, ses équipements, etc.
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          <mat-card-subtitle>Étape 3</mat-card-subtitle>
+          <mat-icon style="color: rgb(14, 14, 14);">photo</mat-icon>
+          Photos
+        </mat-card-title>
+        <button mat-flat-button class="btn2" [routerLink]="['/enregistrement-hotel']">
+           Ajouter des photos
+        </button>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- {{longText}} -->
+      <p>
+        Partagez quelques photos de votre hébergement pour que les clients puissent se projeter.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          <mat-card-subtitle>Étape 4</mat-card-subtitle>
+          <mat-icon style="color: rgb(14, 14, 14);">assignment</mat-icon>
+          Dernières étapes
+        </mat-card-title>
+        <button mat-flat-button disabled>Ajouter les dernières informations</button>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- {{longText}} -->
+      <p>
+        Configurez les paiements et les factures avant d'ouvrir votre hébergement à la réservation.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
