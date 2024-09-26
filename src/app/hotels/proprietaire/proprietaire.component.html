@@ -1,1 +1,49 @@
-<p>proprietaire works!</p>
+<div class="container">
+  <mat-card class="main-card" id="grand">
+    <mat-card-header>
+      <mat-card-title>Inscrivez votre etablissement</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <p style="font-weight: 500;">
+        Informations personnelles de la partie contractante
+      </p>
+      <form class="example-form">
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Noms tel qu'indiqué sur sa pièce d'identité</mat-label>
+          <input matInput placeholder="Entrez le nom" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Prénoms tel qu'indiqué sur sa pièce d'identité</mat-label>
+          <input matInput placeholder="Entrez le prenom" required>
+        </mat-form-field>
+
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                   placeholder="Ex. pat@example.com">
+            <mat-hint>Errors appear instantly!</mat-hint>
+            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+              <mat-error>Please enter a valid email address</mat-error>
+            }
+            @if (emailFormControl.hasError('required')) {
+              <mat-error>Email is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </form>
+
+
+
+      </form>
+
+      <mat-divider style="margin-bottom: 20px;"></mat-divider>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
+  <div class="sub-card">
+
+  </div>
+</div>

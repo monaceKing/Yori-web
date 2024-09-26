@@ -37,6 +37,26 @@
       <app-a-savoir></app-a-savoir>
     </mat-tab>
 
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="circle-container">
+          <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}">5</div>
+          <div class="circle-title">Progression</div> <!-- Titre sous le cercle -->
+        </div>
+      </ng-template>
+      <app-etape-enregistrement></app-etape-enregistrement>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div class="circle-container">
+          <div class="circle" [ngClass]="{'active': activeTabIndex >= 5}">6</div>
+          <div class="circle-title">uSER</div> <!-- Titre sous le cercle -->
+        </div>
+      </ng-template>
+      <app-proprietaire></app-proprietaire>
+    </mat-tab>
+
   </mat-tab-group>
   <div class="tab-navigation-buttons">
     <button (click)="previousTab()">

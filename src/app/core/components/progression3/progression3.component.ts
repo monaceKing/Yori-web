@@ -25,6 +25,7 @@ import { PolitiqueComponent } from '../../../hotels/politique/politique.componen
 import { SalleBainComponent } from '../../../hotels/salle-bain/salle-bain.component';
 import { TarifHebergementComponent } from '../../../hotels/tarif-hebergement/tarif-hebergement.component';
 import { TypeChambreComponent } from '../../../hotels/type-chambre/type-chambre.component';
+import { ProprietaireComponent } from "../../../hotels/proprietaire/proprietaire.component";
 
 @Component({
   selector: 'app-progression3',
@@ -40,7 +41,8 @@ import { TypeChambreComponent } from '../../../hotels/type-chambre/type-chambre.
     PaiementComponent,
     ASavoirComponent,
     RouterOutlet,
-    EtapeEnregistrementComponent
+    EtapeEnregistrementComponent,
+    ProprietaireComponent
 ],
   templateUrl: './progression3.component.html',
   styleUrl: './progression3.component.css'
