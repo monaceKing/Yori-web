@@ -15,6 +15,15 @@
   border-radius: 10px;
 }
 
+#paragraphe{
+  margin-bottom: 70px;
+}
+
+#paragraphe p{
+
+  font-size: 12px;
+}
+
 .card-header h2 {
   margin-bottom: 15px;
 }
@@ -31,6 +40,10 @@
 .full-width {
   width: 100%; /* Prend 100% de la largeur du conteneur */
   height: 100px;
+}
+
+label{
+  font-weight: 500;
 }
 
 input[type="text"],

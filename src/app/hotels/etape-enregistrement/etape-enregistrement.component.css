@@ -1,13 +1,13 @@
 .container {
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 30px;
   margin-bottom: 5px;
-  background-color: rgba(235, 235, 235, 0.826);
+  background-color: rgba(188, 33, 33, 0.826);
   background-color: inherit;
   padding: 50px 270px 110px 20px;
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
-  width: 70%;
+  width: 60%;
   border-radius: 10px;
 }
 
@@ -62,7 +62,7 @@ button:active {
 
 
 /* <style> */
-.container {
+.container1 {
     border: 1px solid #ccc;
     padding: 16px;
     border-radius: 8px;

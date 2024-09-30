@@ -26,6 +26,7 @@ import { StepperComponent } from './core/components/stepper/stepper.component';
 import { ProgressionComponent } from './core/components/progression/progression.component';
 import { Progression2Component } from './core/components/progression2/progression2.component';
 import { Progression3Component } from './core/components/progression3/progression3.component';
+import { Progression4Component } from './core/components/progression4/progression4.component';
 
 export const routes: Routes =  [
     {
@@ -74,6 +75,8 @@ export const routes: Routes =  [
         { path: 'ajout-hotel', component:ProgressionComponent},
         { path: 'info-hotel', component: Progression2Component},
         { path: 'enregistrement-hotel', component: Progression3Component},
+        { path: 'enregistrement-hotel', component: Progression3Component},
+        { path: 'finalisation', component: Progression4Component},
         // Ajoutez d'autres routes nécessitant le header3 et footer ici
       ]
     },

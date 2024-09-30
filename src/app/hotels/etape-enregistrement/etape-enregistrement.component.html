@@ -41,11 +41,53 @@
       </mat-card-content>
     </div>
     <div *ngIf="currentRoute === '/info-hotel'">
-      <h1>Ca va le faire</h1>
+      <div class="container1">
+        <div class="step-header">
+            <!-- <i>&#10003;</i> -->
+            <mat-card-title> <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>
+              Étape 2 - Infos sur l'hébergement
+            </mat-card-title>
+        </div>
+        <p class="subtitle">Ajoutez un autre hébergement pour configurer de nouveaux.</p>
+        <div class="content">
+            <img src="assets/img/test.png" alt="Image Hébergement">
+            <div class="details">
+                <div>
+                    <p><strong>Double</strong></p>
+                    <p>Personnes</p>
+                    <p>2</p>
+                </div>
+                <div>
+                    <p>&nbsp;</p> <!-- Spacer for alignment -->
+                    <p>Tarif</p>
+                    <p>35.000 FCFA</p>
+                </div>
+                <div>
+                    <p>&nbsp;</p> <!-- Spacer for alignment -->
+                    <p>Catégorie de ce type</p>
+                    <p>7</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right-aligned buttons "Supprimer" and "Modifier" -->
+        <div class="top-right-actions">
+            <a href="#">Supprimer</a>
+            <a href="#">Modifier</a>
+        </div>
+
+        <div class="horizontal-line"></div> <!-- Line added above the button -->
+
+        <div class="actions">
+            <div class="right-actions">
+                <button>Ajouter une offre</button>
+            </div>
+        </div>
+    </div>
     </div>
 
     <div *ngIf="currentRoute === '/enregistrement-hotel'">
-      <div class="container">
+      <div class="container1">
         <div class="step-header">
             <!-- <i>&#10003;</i> -->
             <mat-card-title> <mat-icon style="color: rgb(61, 217, 25);">offline_pin</mat-icon>

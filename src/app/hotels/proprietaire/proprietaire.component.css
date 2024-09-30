@@ -19,6 +19,12 @@ mat-label{
 }
 
 
+.joue{
+  margin-left: 45px;
+  margin-top: -30px;
+}
+
+
 .custom-icon {
   color: white;         /* Couleur de l'icône */
   background-color: black; /* Fond noir */

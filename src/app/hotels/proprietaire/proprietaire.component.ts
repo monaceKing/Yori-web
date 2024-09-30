@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroupDirective, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
@@ -28,7 +29,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
 
   ],
   templateUrl: './proprietaire.component.html',
@@ -36,17 +38,19 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class ProprietaireComponent implements OnInit{
   @ViewChild('phoneInput', { static: false }) phoneInputElement!: ElementRef; // Utilisation de ViewChild
+  options: string[] = ["Je certifie que l'activité d'hébergement est légale et détient toutes les autorisations requises, pouvant être présentées sur demande. Mbolo.com B.V. se réserve le droit de vérifier toutes les informations fournies lors de cette inscription.", "J'ai lu et j'accepte les Conditions Génerales de Prestation."];
 
-  ngOnInit(): void {
-    // const inputElement = document.getElementById('phone') as HTMLInputElement; // Type assertion
-    // if (inputElement) {
-    //   intlTelInput(inputElement, {
-    //     initialCountry: 'US',
-    //     separateDialCode: true,
-    //     utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/24.5.0/build/js/i18n/hi/countries.min.js'
-    //   });
-    // }
+  selectedOptions: string[] = [];
+
+  onSelect(option: string, event: any) {
+    if (event.target.checked) {
+      this.selectedOptions.push(option);
+    } else {
+      this.selectedOptions = this.selectedOptions.filter(o => o !== option);
+    }
   }
+
+  ngOnInit(): void {}
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   matcher = new MyErrorStateMatcher();
 

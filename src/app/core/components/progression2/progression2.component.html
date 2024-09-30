@@ -39,15 +39,7 @@
       </ng-template>
       <app-tarif-hebergement></app-tarif-hebergement>
     </mat-tab>
-    <!-- <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}">5</div>
-          <div class="circle-title">Parking</div>
-        </div>
-      </ng-template>
-      <app-parking></app-parking>
-    </mat-tab> -->
+
     <mat-tab>
       <ng-template mat-tab-label>
         <div class="circle-container">
@@ -68,12 +60,12 @@
       <app-etape-enregistrement></app-etape-enregistrement>
     </mat-tab>
   </mat-tab-group>
-  <div class="tab-navigation-buttons">
-    <button (click)="previousTab()">
+  <div class="tab-navigation-buttons" *ngIf="activeTabIndex < 5">
+    <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
       <span class="chevron">&#9664;</span> Précédent
     </button>
     <button (click)="nextTab()">
-      prochaine étape <span class="chevron">&#9654;</span>
+      Prochaine étape <span class="chevron">&#9654;</span>
     </button>
   </div>
 </div>
