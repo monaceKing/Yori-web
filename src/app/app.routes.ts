@@ -58,15 +58,15 @@ export const routes: Routes =  [
       ]
     },
 
-    {
-      path: '',
-      component: EtablissementLayoutComponent,
-      children: [
-        { path: 'espace1', component: Espace1Component },
-        { path: 'list', component: ListeEtablissementsComponent },
+    // {
+    //   path: '',
+    //   component: EtablissementLayoutComponent,
+    //   children: [
+    //     { path: 'espace1', component: Espace1Component },
+    //     { path: 'list', component: ListeEtablissementsComponent },
 
-      ]
-    },
+    //   ]
+    // },
     {
       path: '',
       component: AjoutEtablissementComponent,

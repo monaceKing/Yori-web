@@ -1,44 +1,53 @@
 <div class="container">
   <mat-card class="main-card" id="grand">
-    <mat-card-header>
+    <mat-card-header style="margin-bottom: 20px;">
       <mat-card-title>Inscrivez votre etablissement</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-
-      <p style="font-weight: 500;">
+      <p style="font-weight: 500; margin-bottom: 30px;">
         Informations personnelles de la partie contractante
       </p>
       <form class="example-form">
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>Noms tel qu'indiqué sur sa pièce d'identité</mat-label>
-          <input matInput placeholder="Entrez le nom" required>
-        </mat-form-field>
+        <div class="form-field example-full-width custom-form-field">
+          <label for="full-name">Noms tel qu'indiqué sur sa pièce d'identité</label><br>
+          <input type="text" id="full-name" placeholder="Entrez le nom" required>
+        </div>
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <mat-label>Prénoms tel qu'indiqué sur sa pièce d'identité</mat-label>
-          <input matInput placeholder="Entrez le prenom" required>
-        </mat-form-field>
+        <div class="form-field example-full-width">
+          <label for="first-name">Prénoms tel qu'indiqué sur sa pièce d'identité</label><br>
+          <input type="text" id="first-name" placeholder="Entrez le prénom" required>
+        </div>
 
-        <form class="example-form">
-          <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                   placeholder="Ex. pat@example.com">
-            <mat-hint>Errors appear instantly!</mat-hint>
-            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-              <mat-error>Please enter a valid email address</mat-error>
-            }
-            @if (emailFormControl.hasError('required')) {
-              <mat-error>Email is <strong>required</strong></mat-error>
-            }
-          </mat-form-field>
-        </form>
+        <div class="form-field example-full-width" style="margin-bottom: 10px;">
+          <label for="email">Email</label><br>
+          <input type="email" id="email" placeholder="Ex. monace@example.com" required>
+          <span class="error" id="email-error"></span>
+        </div>
 
-
-
+        <div>
+          <label for="phone">Téléphone</label><br>
+          <input matInput type="tel" id="phone" #phoneInput>
+        </div>
       </form>
 
-      <mat-divider style="margin-bottom: 20px;"></mat-divider>
+      <mat-divider style="margin: 20px 0 20px 0;"></mat-divider>
+      <h3>Vous y êtes presque!</h3>
+      <P style="font-weight: 500;">Une fois votre inscription terminée, vous pourrez:</P>
+
+      <mat-card-content>
+        <div>
+          <p><img src="assets/img/coche.png" alt="coche" style="margin: 0 15px 0 15px;">Gérer votre hébergement à partir de votre tableau de bord</p>
+        </div>
+
+        <div>
+          <p><img src="assets/img/eux.png" alt="eux"  style="margin: 0 15px 0 15px;">Recevoir des réservations des clients utilisant notre application et gagner de l'argent à distance</p>
+        </div>
+
+        <div>
+          <p><img src="assets/img/calandar.png" alt="calandar" style="margin: 0 15px 0 15px;">Garder le contrôle de toutes vos réservations en ligne sur notre application</p>
+        </div>
+      </mat-card-content>
+      <mat-divider style="margin: 20px 0 20px 0;"></mat-divider>
     </mat-card-content>
   </mat-card>
 

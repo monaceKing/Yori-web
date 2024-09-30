@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
 
 
 
-export class LoginComponent implements AfterViewInit{
+export class  LoginComponent implements AfterViewInit{
 
 	private router = inject(Router);
 	private formBuilder = inject(FormBuilder);
@@ -30,54 +30,58 @@ export class LoginComponent implements AfterViewInit{
 	signupFormGroup: FormGroup;
 
 	invalidCredentials = false;
-  
+
 	constructor(private fb: FormBuilder) {
 	  this.loginFormGroup = this.fb.group({
 		email: ['', [Validators.required, Validators.email]],
 		password: ['', [Validators.required]]
 	  });
-  
+
 	  this.signupFormGroup = this.fb.group({
 		lastname: ['', [Validators.required]],
 		// Autres contrôles de formulaire pour le signup
 	  });
 	}
-  
+
 	showLoginForm() {
 	  this.isLoginFormVisible = true;
 	}
-  
+
 	showSignupForm() {
 	  this.isLoginFormVisible = false;
 	}
 
-	
-  
-	login(event: Event) {
-		event.preventDefault();
-	  if (this.loginFormGroup.valid) {
-		console.log('Login method called');
-		console.log('Login data:', this.loginFormGroup.value);
-		this.loginSubscription = this.loginService.login(this.loginFormGroup.value as Credentials).subscribe({
-			next: (result: User | null | undefined) => {
-			this.navigateHome();
-			},
-			error: (error) => {
-				console.log("Problème avec le serveur");
-				this.invalidCredentials = true;
-			//   this.invalidCredentials = true; 
-			   // Affiche une erreur si les identifiants sont incorrects
-			}
-		  });
-	  } else {
-		console.log('Login form is invalid');
-	  }
-	}
+
+
+	// login(event: Event) {
+	// 	event.preventDefault();
+	//   if (this.loginFormGroup.valid) {
+	// 	console.log('Login method called');
+	// 	console.log('Login data:', this.loginFormGroup.value);
+	// 	this.loginSubscription = this.loginService.login(this.loginFormGroup.value as Credentials).subscribe({
+	// 		next: (result: User | null | undefined) => {
+	// 		this.navigateHome();
+	// 		},
+	// 		error: (error) => {
+	// 			console.log("Problème avec le serveur");
+	// 			this.invalidCredentials = true;
+	// 		//   this.invalidCredentials = true;
+	// 		   // Affiche une erreur si les identifiants sont incorrects
+	// 		}
+	// 	  });
+	//   } else {
+	// 	console.log('Login form is invalid');
+	//   }
+	// }
+
+  login(event: Event){
+    this.navigateHome();
+  }
 
 	navigateHome() {
 		this.router.navigate(['home']);
 	  }
-  
+
 	signup() {
 	  if (this.signupFormGroup.valid) {
 		console.log('Signup data:', this.signupFormGroup.value);
@@ -86,10 +90,10 @@ export class LoginComponent implements AfterViewInit{
 		console.log('Signup form is invalid');
 	  }
 	}
-  
 
 
-	//Style pour le Formulaire 
+
+	//Style pour le Formulaire
 	@ViewChild('loginText') loginText!: ElementRef;
 	@ViewChild('loginForm') loginForm!: ElementRef;
 	@ViewChild('loginBtn') loginBtn!: ElementRef;

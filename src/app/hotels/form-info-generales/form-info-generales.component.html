@@ -1,52 +1,52 @@
- <div class="container">
+<div class="container">
   <!-- Première carte qui prend 60% de la largeur -->
-  <mat-card class="main-card" id="grand">
-    <mat-card-header>
-      <mat-card-title>Où se situe l'établissement que vous inscrivez </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+  <div class="main-card" id="grand">
+    <div class="card-header">
+      <h2>Où se situe l'établissement que vous inscrivez</h2>
+    </div>
+    <div class="card-content">
       <form class="form">
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Pays/Région</mat-label>
-          <mat-select matNativeControl required>
-            <mat-option value="pays1">Gabon</mat-option>
-            <mat-option value="pays2">Congo</mat-option>
-            <mat-option value="pays3">Sénégal</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Ville</mat-label>
-          <input matInput placeholder="Entrez la ville" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Quartier</mat-label>
-          <input matInput placeholder="Entrez le quartier" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Adresse</mat-label>
-          <input matInput placeholder="Entrez l'adresse" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Téléphone(structure)</mat-label>
-          <input matInput placeholder="Entrez le numéro de téléphone" required>
-        </mat-form-field>
+        <label class="full-width">
+          <span>Pays/Région</span>
+          <select required>
+            <option value="pays1">Gabon</option>
+            <option value="pays2">Congo</option>
+            <option value="pays3">Sénégal</option>
+          </select>
+        </label>
+        <label class="full-width">
+          <span>Ville</span>
+          <input type="text" placeholder="Entrez la ville" required>
+        </label>
+        <label class="full-width">
+          <span>Quartier</span>
+          <input type="text" placeholder="Entrez le quartier" required>
+        </label>
+        <label class="full-width">
+          <span>Adresse</span>
+          <input type="text" placeholder="Entrez l'adresse" required>
+        </label>
+        <label class="full-width">
+          <span>Téléphone (structure)</span>
+          <input type="tel" placeholder="Entrez le numéro de téléphone" required>
+        </label>
       </form>
-    </mat-card-content>
-    <mat-card-footer>
+    </div>
+    <div class="card-footer">
       <div class="map-container">
-        <!-- Insérez ici la carte -->
-        <p>Map Placeholder</p>
+        <!-- <p>Map Placeholder</p> -->
+         <img src="assets/img/geographie.PNG" alt="" height="200" width="565">
       </div>
-    </mat-card-footer>
-  </mat-card>
+    </div>
+  </div>
 
-  <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
-  <div class="sub-card">
-    <mat-card class="sub-card" id="haut">
-      <mat-card-header>
-        <p><mat-icon class="custom-icon">thumb_up</mat-icon> Que dois-je indiquer dans mon adresse?</p>
-      </mat-card-header>
-      <mat-card-content>
+  <!-- Conteneur pour les cartes superposées -->
+  <div class="sub-card-container">
+    <div class="sub-card" id="haut">
+      <div class="card-header">
+        <p><span class="custom-icon">👍</span> Que dois-je indiquer dans mon adresse?</p>
+      </div>
+      <div class="card-content">
         <ul>
           <li>Indiquez le numéro et le nom de rue du bâtiment.</li>
           <li>Le numéro de l'étage dans la deuxième ligne de l'adresse, le cas échéant</li>
@@ -56,23 +56,21 @@
           <li>Utilisez l'adresse postale de votre hébergement et non celle de votre bureau ou de votre domicile</li>
           <li>Point 7</li>
         </ul>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </div>
 
-    <!-- Troisième carte en dessous de la deuxième -->
-    <mat-card class="sub-card" id="bas">
-      <mat-card-header>
+    <div class="sub-card" id="bas">
+      <div class="card-header">
         <div class="icon-container">
-          <!-- <mat-icon>lightbulb</mat-icon> -->
-          <mat-icon class="custom-icon"> highlight</mat-icon>
+          <span class="custom-icon">💡</span>
         </div>
         <p>Pourquoi dois-je indiquer mon adresse?</p>
-      </mat-card-header>
-      <mat-card-content>
+      </div>
+      <div class="card-content">
         <p>
           Une fois qu'un client réserve votre <br> hébergement, cette adresse lui sera <br> fournie. Il est essentiel qu'elle soit correcte <br> afin que le client puisse trouver facilement <br> votre hébergement.
         </p>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </div>
   </div>
 </div>

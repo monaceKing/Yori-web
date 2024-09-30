@@ -10,7 +10,7 @@
   padding: 50px 270px 110px 20px;
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
-  width: 80%;
+  width: 60%;
   border-radius: 10px;
 }
 
@@ -60,7 +60,7 @@ ul{
 }
 
 .full-width{
-  width: 300px;
+  width: 600px;
 }
 
 
@@ -73,4 +73,21 @@ ul{
 
 .example-full-width {
   width: 100%;
+}
+
+#phone{
+  height: 50px;
+  width: 500px;
+  /* background-color: #f8f8f8; */
+}
+
+#full-name, #first-name, #email{
+  height: 30px;
+  width: 490px;
+  margin: 10px 0 10px 0;
+}
+
+
+.form-field{
+  margin: 20px 0 20px 0;
 }

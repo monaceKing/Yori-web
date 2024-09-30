@@ -3,7 +3,7 @@
       <div class="logo-section">
         <img src="assets/img/logo.png" alt="logo">
         <div class="button-container">
-          <a *ngIf="showAddEstablishmentButton">
+          <a *ngIf="showAddEstablishmentButton" routerLink="/espace1">
             <button mat-button class="premier">Ajoutez votre établissement</button>
           </a>
           <a *ngIf="showLoginButton" (click)="openLoginDialog()">
@@ -12,14 +12,14 @@
           <a *ngIf="showLoginButton" (click)="openLoginDialog()">
             <button mat-button class="premier2">Se Connecter</button>
           </a>
-          <mat-menu #profileMenu="matMenu" class="custom-profile-menu">
-            <button mat-menu-item class="custom-menu-item" [routerLink]="['/espace1']">
-              <mat-icon>location_city</mat-icon>
-              <span>Voir mes établissements</span>
+          <mat-menu #profileMenu="matMenu" id="menu" >
+            <button mat-menu-item  [routerLink]="['/list']" style="color: black;">
+              <!-- <mat-icon>location_city</mat-icon> -->
+              <span ><mat-icon style="margin-right: 5px;">perm_identity</mat-icon>Voir mes établissements</span>
             </button>
-            <button mat-menu-item class="custom-menu-item" (click)="logout()">
-              <mat-icon>exit_to_app</mat-icon>
-              <span>Déconnexion</span>
+            <button mat-menu-item (click)="logout()" style="color: black;">
+              <!-- <mat-icon>exit_to_app</mat-icon> -->
+              <span><mat-icon style="margin-right: 5px;">power_settings_new</mat-icon>Déconnexion</span>
             </button>
           </mat-menu>
 

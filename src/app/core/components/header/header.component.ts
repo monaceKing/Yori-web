@@ -7,6 +7,7 @@ import { LoginService } from '../../services/login/login.service';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -21,13 +22,22 @@ export class HeaderComponent implements OnInit{
   showLoginButton: boolean = false;
   showLogoutButton: boolean = false;
   userName: string | null = null; // Nom de l'utilisateur connecté
+  private dialogRef: any;
 
   constructor(
     private router: Router,
     public dialog: MatDialog,
     public authService: AuthService,
     public loginService: LoginService
-  ) {}
+  ) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        if (this.dialogRef) {
+          this.dialogRef.close();
+        }
+      });
+  }
 
   ngOnInit() {
     this.router.events.subscribe(event => {
@@ -42,7 +52,7 @@ export class HeaderComponent implements OnInit{
     this.loginService.getUser().subscribe(user => {
         this.userName = user?.nom || 'Utilisateur';
     });
-      
+
   }
 
   updateButtonVisibility(url: string) {
@@ -60,7 +70,7 @@ export class HeaderComponent implements OnInit{
       this.showLogoutButton = true;
     }
   }
-  
+
   logout(){
     this.loginService.logout();
     this.navigateHome();
@@ -70,15 +80,15 @@ export class HeaderComponent implements OnInit{
 		this.router.navigate(['/']);
 	  }
 
-  openLoginDialog(): void {
-    const dialogRef = this.dialog.open(LoginComponent, {
-      width: '80%',  // Définir la largeur à 80% de la page
-      maxWidth: '100%',  // Assurez-vous que la largeur ne dépasse pas la taille de l'écran  
-      // data: { },  // Tu peux passer des données si nécessaire
-    });
+    openLoginDialog(): void {
+      this.dialogRef = this.dialog.open(LoginComponent, {
+        width: '80%',
+        maxWidth: '100%',
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('La fenêtre de connexion a été fermée');
-    });
-  }
+      this.dialogRef.afterClosed().subscribe(() => {
+        console.log('La fenêtre de connexion a été fermée');
+        this.dialogRef = null; // Réinitialiser dialogRef
+      });
+    }
 }

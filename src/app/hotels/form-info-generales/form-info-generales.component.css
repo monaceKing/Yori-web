@@ -5,66 +5,102 @@
   margin-left: 30px;
   margin-bottom: 5px;
   background-color: rgba(235, 235, 235, 0.826);
-  background-color: inherit;
-  padding: 50px 270px 110px 20px;
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
   width: 90%;
   border-radius: 10px;
+  flex-wrap: wrap;
 }
 
 .custom-icon {
-  color: white;         /* Couleur de l'icône */
-  background-color: black; /* Fond noir */
-  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
-  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .main-card {
-  flex: 1 1 99%; /* Prend 60% de la largeur */
-  background-color: inherit;
+  flex: 1 1 50%;
+  background-color: white;
+  /* border: 3px solid black; */
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.right-column {
-  flex: 1 1 10%; /* Prend 40% de la largeur */
+.card-header {
+  margin-bottom: 15px;
+}
+
+.card-content {
+  margin-bottom: 15px;
+}
+
+.sub-card-container {
   position: relative;
-  background-color: inherit;
+  flex: 1 1 30%;
 }
 
 .sub-card {
-  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
+  position: relative; /* Permet le chevauchement */
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.sub-card:nth-child(2) {
-  margin-top: -10px; /* Superpose la troisième carte au-dessous de la deuxième */
-  background-color: inherit;
+#haut {
+  z-index: 2; /* La carte du haut apparaît au-dessus */
+  background-color: white;
+  /* margin-top:-15px; */
+  padding: 10px 0 10px 10px;
+  border-radius: 10px;
+}
+
+#bas {
+  margin-top: 20px; /* Espace entre les cartes */
+  padding: 10px 0 10px 10px;
+
+  background-color: white;
+  border-radius: 10px;
 }
 
 .full-width {
   width: 70%;
-  /* background-color: #77B5FE; */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
 
 .map-container {
-  height: 200px; /* Hauteur de la carte */
-  background-color: #f0f0f0; /* Couleur de fond temporaire */
+  height: 200px;
+  background-color: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: inherit;
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
 
-#bas{
-  background-color: inherit;
-  margin-top: 20px;
+  .main-card, .sub-card-container {
+    flex: 1 1 100%;
+  }
+
+  .sub-card {
+    position: static; /* En mode mobile, ne pas superposer */
+    margin-bottom: 10px;
+  }
 }
-
-
-#haut{
-  background-color: inherit;
-  margin-top: 10px;
-}
-
-

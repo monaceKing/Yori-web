@@ -1,112 +1,89 @@
 .container {
   display: flex;
+  flex-direction: column; /* Adaptation pour responsivité */
   gap: 20px;
-  /* background-color: rgba(235, 235, 235, 0.826); */
   background-color: inherit;
-  padding: 30px 150px 4px 150px;
-
+  padding: 20px 150px 4px 150px;
+  border-radius: 30px;
 }
 
 .main-card {
   flex: 1 1 60%; /* Prend 60% de la largeur */
   background-color: rgb(255, 255, 255);
-  /* margin-left: 20px; */
+  padding: 20px; /* Ajout d'un padding */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  border-radius: 10px;
 }
 
-.right-column {
-  flex: 1 1 50%; /* Prend 40% de la largeur */
-  position: relative;
-}
-
-.sub-card {
-  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
-}
-
-.sub-card:nth-child(2) {
-  margin-top: -10px; /* Superpose la troisième carte au-dessous de la deuxième */
-}
-
-.full-width {
-  width: 60%;
-}
-
-.map-container {
-  height: 200px; /* Hauteur de la carte */
-  background-color: #fd0000; /* Couleur de fond temporaire */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 50px;
-}
-
-
-#bas{
-  margin-top: 20px;
-}
-
-
-#haut{
-
-  margin-top: 10px;
-}
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 60%;
-}
-
-
-.example-radio-group {
-  display: flex;
-  flex-direction: column;
-  margin: 15px 0;
-  align-items: flex-start;
-}
-
-.example-radio-button {
-  margin: 5px;
-}
-
-.star-icons {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 8px; /* Espace entre le texte et les étoiles */
-}
-
-.star-icon {
-  color: gold; /* Couleur des étoiles */
-  font-size: 24px; /* Taille des étoiles */
-  margin-left: 2px; /* Espace entre les étoiles */
-}
-
-mat-card-footer label{
-font-size: 20px;
-font-weight: bold;
-padding-left: 40px;
-}
-
-mat-radio-group{
-  padding-left: 30px;
-}
-
-
-mat-card-title{
+.card-header h2 {
   margin-bottom: 15px;
 }
 
-/* app.component.css */
+.card-content {
+  margin-bottom: 20px; /* Espacement entre le contenu et le footer */
+  width: 60%;
+}
+
+.form-field {
+  margin-bottom: 15px; /* Espacement entre les champs */
+}
+
+.full-width {
+  width: 100%; /* Prend 100% de la largeur du conteneur */
+  height: 100px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%; /* Largeur 100% */
+  padding: 10px; /* Espacement intérieur */
+  border: 1px solid #ccc; /* Bordure légère */
+  border-radius: 4px; /* Coins arrondis */
+}
+
+.card-footer{
+  margin-top: 40px;
+}
+
+.card-footer label {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#labelF{
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
 .radio-button {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 8px; /* Espacement entre les boutons */
 }
 
 .star {
   margin-left: 4px; /* Espacement entre le texte et les étoiles */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px; /* Réduction du padding sur petits écrans */
+  }
+
+  .main-card {
+    flex: 1 1 100%; /* Prend 100% de la largeur sur petits écrans */
+  }
+
+  .full-width {
+    width: 100%; /* S'assure que les champs prennent toute la largeur */
+  }
 }

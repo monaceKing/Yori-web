@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { FooterComponent } from '../core/components/footer/footer.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,8 @@ import { FooterComponent } from '../core/components/footer/footer.component';
     MatCardHeader,
     MatCardTitle,
     MatCardFooter,
-    FooterComponent
+    FooterComponent,
+    RouterLink
 ],
   templateUrl: './acceuil1.component.html',
   styleUrl: './acceuil1.component.css'

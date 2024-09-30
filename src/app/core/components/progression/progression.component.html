@@ -75,21 +75,12 @@
       </ng-template>
       <app-etape-enregistrement></app-etape-enregistrement>
     </mat-tab>
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 7}">8</div>
-          <div class="circle-title">Paiement</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-paiement></app-paiement>
-    </mat-tab>
   </mat-tab-group>
   <div class="tab-navigation-buttons">
-    <button (click)="previousTab()">
+    <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
       <span class="chevron">&#9664;</span> Précédent
     </button>
-    <button (click)="nextTab()">
+    <button *ngIf="activeTabIndex < 7" (click)="nextTab()">
       prochaine étape <span class="chevron">&#9654;</span>
     </button>
   </div>

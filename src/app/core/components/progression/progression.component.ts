@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatProgressBar } from '@angular/material/progress-bar';
-import { MatTab, MatTabGroup, MatTabsModule } from '@angular/material/tabs';
+import { MatTab, MatTabChangeEvent, MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 import { FormCaracteristiqueComponent } from '../../../hotels/form-caracteristique/form-caracteristique.component';
 import { FormLocalisationComponent } from '../../../hotels/form-localisation/form-localisation.component';
 import { FormPhotosComponent } from '../../../hotels/form-photos/form-photos.component';
@@ -62,18 +62,19 @@ import { ASavoirComponent } from "../../../hotels/a-savoir/a-savoir.component";
   templateUrl: './progression.component.html',
   styleUrl: './progression.component.css'
 })
-export class ProgressionComponent implements  AfterViewInit{
-
+export class ProgressionComponent implements AfterViewInit {
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0;
 
   ngAfterViewInit() {
     setTimeout(() => {
+      const savedIndex = localStorage.getItem('activeTabIndex');
+      this.activeTabIndex = savedIndex ? +savedIndex : 0;
       this.selectTab(this.activeTabIndex);
     });
   }
 
-  onTabChange(event: any) {
+  onTabChange(event: MatTabChangeEvent) {
     this.activeTabIndex = event.index;
     localStorage.setItem('activeTabIndex', this.activeTabIndex.toString());
   }
@@ -81,24 +82,18 @@ export class ProgressionComponent implements  AfterViewInit{
   selectTab(index: number) {
     this.activeTabIndex = index;
     localStorage.setItem('activeTabIndex', index.toString());
+    this.tabGroup.selectedIndex = index;
   }
 
   previousTab() {
-    if (this.tabGroup) {
-      const currentIndex = this.tabGroup.selectedIndex;
-      if (currentIndex !== null && currentIndex > 0) {
-        this.selectTab(currentIndex - 1);
-      }
+    if (this.activeTabIndex > 0) {
+      this.selectTab(this.activeTabIndex - 1);
     }
   }
 
   nextTab() {
-    if (this.tabGroup) {
-      const currentIndex = this.tabGroup.selectedIndex;
-      if (currentIndex !== null && this.tabGroup._tabs.length > 0 && currentIndex < this.tabGroup._tabs.length - 1) {
-        this.selectTab(currentIndex + 1);
-      }
+    if (this.activeTabIndex < this.tabGroup._tabs.length - 1) {
+      this.selectTab(this.activeTabIndex + 1);
     }
   }
-
 }

@@ -24,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDivider,
     MatSelectModule,
     MatCardTitleGroup,
+    CommonModule
 
   ],
   templateUrl: './type-chambre.component.html',
