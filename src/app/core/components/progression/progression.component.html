@@ -1,98 +1,101 @@
-<div class="tab-container">
-  <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="activeTabIndex">
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 0}">1</div>
-          <div class="circle-title">Localisation</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-form-info-generales></app-form-info-generales>
-    </mat-tab>
+<body>
+  <div class="tab-container">
+    <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="activeTabIndex">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 0}">1</div>
+            <div class="circle-title">Localisation</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-form-info-generales></app-form-info-generales>
+      </mat-tab>
 
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 1}">2</div>
-          <div class="circle-title">nom de la structure</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-nom-structure></app-nom-structure>
-    </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 1}">2</div>
+            <div class="circle-title">nom de la structure</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-nom-structure></app-nom-structure>
+      </mat-tab>
 
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 2}">3</div>
-          <div class="circle-title">Commodités</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-commodites></app-commodites>
-    </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 2}">3</div>
+            <div class="circle-title">Commodités</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-commodites></app-commodites>
+      </mat-tab>
 
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">4</div>
-          <div class="circle-title">Petit-dejeuner</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-petit-dejeuner></app-petit-dejeuner>
-    </mat-tab>
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}">5</div>
-          <div class="circle-title">Parking</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-parking></app-parking>
-    </mat-tab>
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 5}">6</div>
-          <div class="circle-title">Langues</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-langues></app-langues>
-    </mat-tab>
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 6}">7</div>
-          <div class="circle-title">Politique de l'etablissement</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-politique></app-politique>
-    </mat-tab>
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 7}">8</div>
-          <div class="circle-title">Progression</div> <!-- Titre sous le cercle -->
-        </div>
-      </ng-template>
-      <app-etape-enregistrement></app-etape-enregistrement>
-    </mat-tab>
-  </mat-tab-group>
-  <div class="tab-navigation-buttons" *ngIf="activeTabIndex < 7">
-    <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
-      <span class="chevron">&#9664;</span> Précédent
-    </button>
-    <button (click)="nextTab()">
-      prochaine étape <span class="chevron">&#9654;</span>
-    </button>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">4</div>
+            <div class="circle-title">Petit-dejeuner</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-petit-dejeuner></app-petit-dejeuner>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}">5</div>
+            <div class="circle-title">Parking</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-parking></app-parking>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 5}">6</div>
+            <div class="circle-title">Langues</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-langues></app-langues>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 6}">7</div>
+            <div class="circle-title">Politique de l'etablissement</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-politique></app-politique>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="circle-container">
+            <div class="circle" [ngClass]="{'active': activeTabIndex >= 7}">8</div>
+            <div class="circle-title">Progression</div> <!-- Titre sous le cercle -->
+          </div>
+        </ng-template>
+        <app-etape-enregistrement></app-etape-enregistrement>
+      </mat-tab>
+    </mat-tab-group>
+    <div class="tab-navigation-buttons" *ngIf="activeTabIndex < 7">
+      <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
+        <span class="chevron">&#9664;</span> Précédent
+      </button>
+      <button (click)="nextTab()">
+        prochaine étape <span class="chevron">&#9654;</span>
+      </button>
+    </div>
+
+
+
+    <!-- <div class="tab-navigation-buttons" *ngIf="activeTabIndex < 5">
+      <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
+        <span class="chevron">&#9664;</span> Précédent
+      </button>
+      <button (click)="nextTab()">
+        Prochaine étape <span class="chevron">&#9654;</span>
+      </button>
+    </div> -->
   </div>
 
-
-
-  <!-- <div class="tab-navigation-buttons" *ngIf="activeTabIndex < 5">
-    <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
-      <span class="chevron">&#9664;</span> Précédent
-    </button>
-    <button (click)="nextTab()">
-      Prochaine étape <span class="chevron">&#9654;</span>
-    </button>
-  </div> -->
-</div>
+</body>

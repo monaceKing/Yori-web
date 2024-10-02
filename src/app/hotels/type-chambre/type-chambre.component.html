@@ -2,10 +2,11 @@
   <!-- Première carte qui prend 60% de la largeur -->
   <mat-card class="main-card" id="grand">
     <mat-card-header>
-      <mat-card-title>Configurez votre type de chambre</mat-card-title>
+      <mat-card-title>Configurez votre type de chambre</mat-card-title><br>
     </mat-card-header>
     <mat-card-content>
       <form>
+        <br>
         <mat-form-field appearance="fill" class="full-width">
           <mat-label>Selectionnez le nom de votre hébergement</mat-label>
           <mat-select matNativeControl required>
@@ -16,30 +17,32 @@
         </mat-form-field>
         <div>
           <mat-label>Combien d'hébergements de ce type (hébergement) <br> possédez-vous?</mat-label><br>
-          <input type="number" name="number" id="inputNumber" placeholder="0">
+          <input type="number" name="number" id="inputNumber" placeholder="0" style="margin: 10px 0 10px 0;">
         </div>
         <mat-divider style="margin-bottom: 20px;"></mat-divider>
-        <mat-label>Combien d'hébergements de ce type (hébergement) <br> possédez-vous?</mat-label><br>
-        <mat-card class="example-card" appearance="outlined">
+        <mat-label>Combien d'hébergements de ce type (hébergement) <br> possédez-vous?</mat-label><br><br>
+        <mat-card *ngFor="let lit of lits; let i = index" class="example-card" appearance="outlined">
           <mat-card-header>
             <mat-card-title-group>
               <mat-card-title>
-                <div style="display: flex;">
-                  <img mat-card-sm-image src="assets/img/lit.png" style="margin-bottom: 20px;" height="50" width="50">
-                  <span style="font-size: 15px; margin-left: 5px;">lit simple <br> 90-130 cm de large</span><br>
+                <div class="lit-info">
+                  <img mat-card-sm-image src="assets/img/lit.png" class="lit-image">
+                  <span class="lit-details">{{ lit.name }} <br> {{ lit.size }}</span>
                 </div>
               </mat-card-title>
             </mat-card-title-group>
             <div class="quantity-container">
               <div class="quantity">
-                <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-                <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
+                <button type="button" (click)="quantity('min', i)" class="btn btn-black" [disabled]="productQuantities[i] <= 1"><strong>-</strong></button>
+                <input class="inputbox" type="text" [value]="productQuantities[i]" id="" disabled>
+                <button type="button" (click)="quantity('max', i)" class="btn btn-blue"><strong>+</strong></button>
               </div>
             </div>
           </mat-card-header>
         </mat-card>
-        <mat-card class="example-card" appearance="outlined">
+
+
+        <!-- <mat-card class="example-card" appearance="outlined">
           <mat-card-header>
             <mat-card-title-group>
               <mat-card-title>
@@ -152,7 +155,7 @@
               </div>
             </div>
           </mat-card-header>
-        </mat-card>
+        </mat-card> -->
 
         <div style="margin: 40px;">
           <p>Combien de personnes peuvent séjourner dans cette
@@ -160,9 +163,9 @@
           </p>
           <div class="quantity-container" style="width: 140px;">
             <div class="quantity">
-              <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
+              <button type="button" (click)="quantity1('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
               <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-              <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
+              <button type="button" (click)="quantity1('max')" class="btn btn-blue"><strong>+</strong></button>
             </div>
           </div>
         </div>

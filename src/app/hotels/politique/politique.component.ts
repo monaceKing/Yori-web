@@ -43,4 +43,7 @@ export class PolitiqueComponent {
   minDepartureTime = '18:00';
   maxDepartureTime = '23:00';
 
+  // Ajout des nouvelles propriétés
+  childrenAccepted: string | undefined;
+  petsAccepted: string | undefined;
 }

@@ -3,62 +3,74 @@
   justify-content: center;
   gap: 20px;
   margin-top: 25px;
-  margin-left: 90px;
+  margin-left: auto; /* Centrer horizontalement */
+  margin-right: auto; /* Centrer horizontalement */
   margin-bottom: 5px;
-  background-color: rgba(235, 235, 235, 0.826);
-  background-color: inherit;
-  padding: 50px 270px 110px 20px;
+  /* background-color: rgba(235, 235, 235, 0.826); */
+  background-color: initial;
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
   width: 80%;
   border-radius: 10px;
 }
 
-mat-label{
+/* Styles pour les titres */
+mat-label {
   font-weight: 500;
 }
 
-
 .custom-icon {
-  color: white;         /* Couleur de l'icône */
+  color: white; /* Couleur de l'icône */
   background-color: black; /* Fond noir */
-  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
-  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
+  border-radius: 50%; /* Pour donner un effet de cercle autour de l'icône */
+  padding: 5px; /* Pour ajouter un espace autour de l'icône */
 }
 
 .main-card {
-  /* width: 1000px; */
   flex: 1 1 40%; /* Prend 60% de la largeur */
-  /* background-color: rgb(207, 9, 9); */
   background-color: inherit;
-  /* margin-left: 20px; */
 }
 
-.right-column {
-  flex: 1 1 40%;
-   /* Prend 40% de la largeur */
-  position: relative;
-}
-
+/* Sous-carte */
 .sub-card {
   margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
-  /* background-color: blue; */
   background-color: inherit;
-  /* margin-left: 100px; */
 }
 
-
-#haut{
-
+#haut {
   margin-top: 10px;
   width: 300px;
 }
 
-
-ul{
+ul {
   margin-top: 50px;
 }
 
-.full-width{
-  width: 300px;
+.full-width {
+  width: 100%; /* Prendre toute la largeur sur petits écrans */
+}
+
+/* Ajout de styles pour la responsivité */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Passage en colonne sur petits écrans */
+    padding: 20px; /* Réduction du padding */
+    margin-left: 10px; /* Ajustement des marges */
+    margin-right: 10px; /* Ajustement des marges */
+  }
+
+  .main-card,
+  .sub-card {
+    width: 100%; /* Prendre 100% de la largeur sur petits écrans */
+    margin-left: 0; /* Suppression de la marge gauche */
+    margin-right: 0; /* Suppression de la marge droite */
+  }
+
+  #haut {
+    width: auto; /* S'assurer que la sous-carte s'adapte bien */
+  }
+
+  .full-width {
+    width: 100%; /* S'assurer que les champs prennent toute la largeur */
+  }
 }

@@ -68,21 +68,16 @@ export class Progression3Component implements  AfterViewInit{
     localStorage.setItem('activeTabIndex', index.toString());
   }
 
+
   previousTab() {
-    if (this.tabGroup) {
-      const currentIndex = this.tabGroup.selectedIndex;
-      if (currentIndex !== null && currentIndex > 0) {
-        this.selectTab(currentIndex - 1);
-      }
+    if (this.activeTabIndex > 0) {
+      this.activeTabIndex--;
     }
   }
 
   nextTab() {
-    if (this.tabGroup) {
-      const currentIndex = this.tabGroup.selectedIndex;
-      if (currentIndex !== null && this.tabGroup._tabs.length > 0 && currentIndex < this.tabGroup._tabs.length - 1) {
-        this.selectTab(currentIndex + 1);
-      }
+    if (this.activeTabIndex < 2) {
+      this.activeTabIndex++;
     }
   }
 

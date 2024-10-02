@@ -1,79 +1,26 @@
 .container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column; /* Empile les cartes */
+  align-items: center; /* Centre les cartes */
   margin-top: 25px;
-  margin-left: 90px;
+  margin-left: auto; /* Utilisation de auto pour centrer */
+  margin-right: auto; /* Utilisation de auto pour centrer */
   margin-bottom: 5px;
-  background-color: rgba(235, 235, 235, 0.826);
-  background-color: inherit;
-  padding: 50px 270px 110px 20px;
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
   width: 60%;
   border-radius: 10px;
 }
 
-mat-label{
-  font-weight: 500;
-}
-
-
-.joue{
-  margin-left: 45px;
-  margin-top: -30px;
-}
-
-
-.custom-icon {
-  color: white;         /* Couleur de l'icône */
-  background-color: black; /* Fond noir */
-  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
-  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
-}
-
-.main-card {
-  /* width: 1000px; */
-  flex: 1 1 40%; /* Prend 60% de la largeur */
-  /* background-color: rgb(207, 9, 9); */
+.main-card, .sub-card {
+  flex: 1 1 100%; /* Prend toute la largeur */
+  margin-bottom: 20px; /* Espace entre les cartes */
   background-color: inherit;
-  /* margin-left: 20px; */
 }
-
-.right-column {
-  flex: 1 1 40%;
-   /* Prend 40% de la largeur */
-  position: relative;
-}
-
-.sub-card {
-  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
-  /* background-color: blue; */
-  background-color: inherit;
-  /* margin-left: 100px; */
-}
-
-
-#haut{
-
-  margin-top: 10px;
-  width: 300px;
-}
-
-
-ul{
-  margin-top: 50px;
-}
-
-.full-width{
-  width: 600px;
-}
-
-
 
 .example-form {
   min-width: 150px;
-  max-width: 500px;
+  max-width: 100%; /* Prendre toute la largeur */
   width: 100%;
 }
 
@@ -81,19 +28,23 @@ ul{
   width: 100%;
 }
 
-#phone{
-  height: 50px;
-  width: 500px;
-  /* background-color: #f8f8f8; */
-}
-
-#full-name, #first-name, #email{
+#phone, #full-name, #first-name, #email {
   height: 30px;
-  width: 490px;
-  margin: 10px 0 10px 0;
+  width: 100%; /* Prendre toute la largeur */
+  margin: 10px 0;
 }
 
+.form-field {
+  margin: 20px 0;
+}
 
-.form-field{
-  margin: 20px 0 20px 0;
+@media (max-width: 768px) {
+  /* Réduction de la taille du texte */
+  .main-card p, .main-card h3 {
+    font-size: 0.9em; /* Réduire la taille du texte */
+  }
+
+  .joue {
+    margin-left: 0; /* Ajuste le margin pour la responsivité */
+  }
 }

@@ -1,64 +1,62 @@
 .container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between; /* Créer de l'espace entre les cartes */
   margin-top: 25px;
-  margin-left: 90px;
-  margin-bottom: 5px;
-  background-color: rgba(235, 235, 235, 0.826);
-  background-color: inherit;
-  padding: 50px 270px 110px 20px;
+  margin: 25px auto; /* Centrer horizontalement */
+  /* background-color: rgba(235, 235, 235, 0.826); */
+  background-color: initial;
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
   width: 80%;
   border-radius: 10px;
 }
 
-mat-label{
+mat-label {
   font-weight: 500;
 }
 
-
 .custom-icon {
-  color: white;         /* Couleur de l'icône */
+  color: white; /* Couleur de l'icône */
   background-color: black; /* Fond noir */
-  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
-  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
+  border-radius: 50%; /* Pour donner un effet de cercle autour de l'icône */
+  padding: 5px; /* Pour ajouter un espace autour de l'icône */
 }
 
 .main-card {
-  /* width: 1000px; */
-  flex: 1 1 40%; /* Prend 60% de la largeur */
-  /* background-color: rgb(207, 9, 9); */
+  flex: 1 1 60%; /* Prend 60% de la largeur */
   background-color: inherit;
-  /* margin-left: 20px; */
-}
-
-.right-column {
-  flex: 1 1 40%;
-   /* Prend 40% de la largeur */
-  position: relative;
+  margin-right: 20px; /* Espacement à droite */
 }
 
 .sub-card {
-  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
-  /* background-color: blue; */
+  flex: 1 1 35%; /* Prend 35% de la largeur */
+  margin-left: 10px; /* Espacement à gauche */
   background-color: inherit;
-  /* margin-left: 100px; */
 }
 
-
-#haut{
-
+#haut {
   margin-top: 10px;
-  width: 300px;
+  width: 100%; /* Prend toute la largeur sur petits écrans */
 }
 
-
-ul{
+ul {
   margin-top: 50px;
 }
 
-.full-width{
-  width: 300px;
+.full-width {
+  width: 100%; /* Prend toute la largeur sur petits écrans */
+}
+
+/* Ajout de styles pour la responsivité */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Passe en colonne sur petits écrans */
+    padding: 10px; /* Réduction du padding sur petits écrans */
+  }
+
+  .main-card,
+  .sub-card {
+    flex: 1 1 100%; /* Prend toute la largeur sur petits écrans */
+    margin: 10px 0; /* Marges verticales */
+  }
 }

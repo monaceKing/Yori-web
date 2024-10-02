@@ -1,13 +1,27 @@
 .container {
   display: flex;
+  justify-content: center; /* Centrer le contenu */
   gap: 20px;
-  /* background-color: rgba(235, 235, 235, 0.826); */
-  background-color: inherit;
-  padding: 30px 150px 20px 150px;
+  padding: 20px; /* Padding général */
+  width: 90%; /* Largeur responsive */
+  max-width: 800px; /* Limiter la largeur maximale */
+  margin: 0 auto; /* Centrer le conteneur horizontalement */
 }
 
 .main-card {
-  flex: 1 1 50%; /* Prend 60% de la largeur */
+  flex: 1 1 100%; /* S'assure que la carte utilise toute la largeur disponible */
   background-color: rgb(255, 255, 255);
-  /* margin-left: 20px; */
+  padding: 20px; /* Padding à l'intérieur de la carte */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet de profondeur */
+}
+
+label {
+  margin-left: 10px; /* Espacement entre le checkbox et le label */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Réduire le padding sur les petits écrans */
+  }
 }

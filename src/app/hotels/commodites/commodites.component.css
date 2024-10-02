@@ -1,53 +1,42 @@
 .container {
   display: flex;
-  margin-top: 25px;
-  margin-left: 30px;
-  margin-bottom: 5px;
-  background-color: rgba(235, 235, 235, 0.826);
-  background-color: inherit;
-  padding: 50px 270px 110px 20px;
+  flex-wrap: wrap; /* Permet aux éléments de s'enrouler */
+  margin: 25px 30px 5px; /* Marges combinées */
+  /* background-color: rgba(235, 235, 235, 0.826); */
   padding: 20px;
   box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
   width: 90%;
   border-radius: 10px;
-  gap: 20px;
+  gap: 20px; /* Espace entre les éléments */
+  background-color: inherit;
+
 }
 
 .custom-icon {
-  color: white;         /* Couleur de l'icône */
-  background-color: black; /* Fond noir */
-  border-radius: 50%;    /* Pour donner un effet de cercle autour de l'icône */
-  padding: 5px;         /* Pour ajouter un espace autour de l'icône */
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .main-card {
-  flex: 1 1 60%;
+  flex: 1 1 60%; /* 60% de la largeur */
   background-color: inherit;
-}
-
-.right-column {
-  flex: 1 1 50%; /* Prend 40% de la largeur */
-  position: relative;
-  background-color: inherit;
+  min-width: 300px; /* Assure une largeur minimale */
 }
 
 .sub-card {
-  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
-}
-
-.sub-card:nth-child(2) {
-  margin-top: -10px; /* Superpose la troisième carte au-dessous de la deuxième */
+  flex: 1 1 30%; /* 30% de la largeur */
+  margin-bottom: 10px;
   background-color: inherit;
 }
 
-.full-width {
-  width: 70%;
+#haut {
+  margin-top: -10px; /* Superposition avec la carte en dessous */
 }
 
-
-
-#haut{
-  background-color: inherit;
-  margin-top: 10px;
+@media (max-width: 768px) {
+  .main-card, .sub-card {
+    flex: 1 1 100%; /* Prendre toute la largeur sur mobile */
+  }
 }
-

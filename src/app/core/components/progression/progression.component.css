@@ -2,11 +2,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 80px;
   margin: 0;
-  background-color: #3600f9;
+  /* background-color: #3600f9; */
   /* background-color: inherit; */
-
 }
 
 /* mat-tab{
@@ -20,6 +19,7 @@ body {
   align-items: center;
   /* width: 100%; */
   position: relative;
+  height: 80%;
 }
 
 .tab-navigation-buttons {

@@ -27,6 +27,7 @@ import { ProgressionComponent } from './core/components/progression/progression.
 import { Progression2Component } from './core/components/progression2/progression2.component';
 import { Progression3Component } from './core/components/progression3/progression3.component';
 import { Progression4Component } from './core/components/progression4/progression4.component';
+import { LoadingComponent } from './hotels/loading/loading.component';
 
 export const routes: Routes =  [
     {
@@ -59,15 +60,6 @@ export const routes: Routes =  [
       ]
     },
 
-    // {
-    //   path: '',
-    //   component: EtablissementLayoutComponent,
-    //   children: [
-    //     { path: 'espace1', component: Espace1Component },
-    //     { path: 'list', component: ListeEtablissementsComponent },
-
-    //   ]
-    // },
     {
       path: '',
       component: AjoutEtablissementComponent,
@@ -75,14 +67,12 @@ export const routes: Routes =  [
         { path: 'ajout-hotel', component:ProgressionComponent},
         { path: 'info-hotel', component: Progression2Component},
         { path: 'enregistrement-hotel', component: Progression3Component},
-        { path: 'enregistrement-hotel', component: Progression3Component},
         { path: 'finalisation', component: Progression4Component},
         // Ajoutez d'autres routes nécessitant le header3 et footer ici
       ]
     },
 
-    { path:'mav', component: StepperComponent},
-
+    { path:'loading', component: LoadingComponent},
 
     { path: '**', component: PageErrorComponent } // Redirige pour les routes inconnues
   ];
