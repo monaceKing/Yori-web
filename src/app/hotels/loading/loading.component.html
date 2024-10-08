@@ -10,15 +10,39 @@
 
       <p *ngIf="showFirstParagraph" class="para">Veuillez patienter l'ajout de votre établissement sur Yori.com</p>
       <p *ngIf="showSecondParagraph" class="para">L'ajout de votre établissement vous apportera des réservations mondiales</p>
-
+      <section>
+        <div class="dots">
+          <span style="--i:1;"></span>
+          <span style="--i:2;"></span>
+          <span style="--i:3;"></span>
+          <span style="--i:4;"></span>
+          <span style="--i:5;"></span>
+          <span style="--i:6;"></span>
+          <span style="--i:7;"></span>
+          <span style="--i:8;"></span>
+          <span style="--i:9;"></span>
+          <span style="--i:10;"></span>
+          <span style="--i:11;"></span>
+          <span style="--i:12;"></span>
+          <span style="--i:13;"></span>
+          <span style="--i:14;"></span>
+          <span style="--i:15;"></span>
+        </div>
+      </section>    
       <div class="popup" *ngIf="showPopup">
         <div class="icon-container">
           <mat-icon>done</mat-icon>
         </div>
         <h3>SUCCES!</h3>
         <p>Votre inscription a été réalisée avec succès.<br>Un e-mail vous sera envoyé sous peu.</p>
+        <button class="btn-valide">OK</button>
       </div>
     </div>
+
+    <!-- <div *ngIf="isLoading" class="loader"></div>
+    <div *ngIf="!isLoading">
+        Contenu de la page une fois les données chargées
+    </div> -->
 
   </mat-card-content>
   <mat-card-actions>

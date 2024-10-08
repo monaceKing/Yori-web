@@ -6,6 +6,24 @@
     /* border: 2px solid burlywood; */
   }
 
+  .jus{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative; /* ou absolute si nécessaire */
+    z-index: 10;
+    background-color: #ffffff;
+    color: #77B5FE;
+    border: 1px solid #77B5FE;
+    height: 35px;
+    border-radius: 10px;
+  }
+
+  .jus:hover{
+    background-color: #77B5FE;
+    color: #ffffff;
+  }
 
 
   .premier{

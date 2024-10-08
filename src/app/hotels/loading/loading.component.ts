@@ -35,4 +35,17 @@ export class LoadingComponent implements OnInit{
     }, 5000);
   }
 
+
+  isLoading: boolean = true;
+
+loadData() {
+    this.isLoading = true;
+    // Simuler un chargement avec setTimeout
+    setTimeout(() => {
+        // Charger les données ici
+        this.isLoading = false; // Lorsque le chargement est terminé
+    }, 2000);
+}
+
+
 }
