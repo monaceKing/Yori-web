@@ -6,17 +6,18 @@
     </mat-card-header>
     <mat-card-content>
 
-      <form action="">
+      <form (ngSubmit)="calculerPourcentage()">
         <p style="font-weight: 500;">Combien souhaitez-vous facturer par nuit ?</p>
         <div>
-          <input type="number" placeholder="CFA |" required>
-          <select name="tarif" id="" style="margin-left: 10px;">
-            <option value="">F CFA</option>
-            <option value="">Euro</option>
-            <option value="">Dollard</option>
-            <option value="">autres</option>
+          <input type="number" placeholder="CFA |" required [(ngModel)]="somme" name="tarif" (ngModelChange)="calculerPourcentage()">
+          <select [(ngModel)]="monnaie" (change)="calculerPourcentage()" name="monnaie" style="margin-left: 10px;">
+            <option value="F CFA">F CFA</option>
+            <option value="Euro">Euro</option>
+            <option value="Dollar">Dollar</option>
+            <option value="Autres">Autres</option>
           </select>
         </div>
+        <!-- <button type="submit">Soumettre</button> -->
       </form>
       <p style="font-weight: 500;">Taxes, commission et frais compris</p>
         <p style="margin: 40px 0 40px 0;">00% Commission sur Yori.com</p>
@@ -25,7 +26,7 @@
         <p><mat-icon style="color: #77B5FE; margin: 10px 0 10px 0;">done</mat-icon> Nous mettons en valeur votre établissement à l'échelle mondiale</p>
       <mat-divider style="margin: 20px 0 20px 0;"></mat-divider>
       <p>Nous percevons une commission de 15 % pour chaque réservation
-        effectuée sur l'application. Vous obtiendrez <strong>42.500 F CFA</strong> par reservation</p>
+        effectuée sur l'application. Vous obtiendrez <strong>{{ pourcentage | number:'1.0-0' }} {{ monnaie }}</strong> par reservation</p>
 
     </mat-card-content>
   </mat-card>
