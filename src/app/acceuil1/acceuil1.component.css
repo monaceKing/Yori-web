@@ -1,36 +1,38 @@
 /* Styles de base */
-.home-container {
+/* .home-container {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-/* Header */
-.hero-section {
-  background-image: url('../../../public/assets/img/hero-bg2.png');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   justify-content: center;
-  padding: 20px;
+} */
+
+.home-container {
+  width: 98%; /* Définit la largeur de la div principale */
   text-align: center;
+  margin: 0 auto; /* Centre la div horizontalement */
+  display: flex; /* Utilise Flexbox pour le centrage */
+  flex-direction: column; /* Aligne les éléments verticalement */
+   /* Centre le texte à l'intérieur de la div */
 }
 
-.premier{
+#fin{
+  background-color: rgb(228, 228, 228);
+  border-radius: 10px;
+  height: 150px;
+}
+
+.premier {
   background-color: #78b9ff;
+  text-align: center;
+  display: inline-block; /* Permet au bouton de s'ajuster à la taille du texte */
+ /* Ajoute un peu d'espace autour du texte */
+  border: none; /* Enlève la bordure par défaut */
+  border-radius: 5px; /* Ajoute un léger arrondi aux coins */
+  cursor: pointer; /* Change le curseur au survol */
+  font-size: 16px; /* Ajuste la taille de la police selon tes besoins */
 }
 
-.hero-section h1 {
-  font-size: 3em; /* Taille de police responsive */
-  margin-bottom: 10px;
-  color: #ffffff;
-  padding-left: 1.5em;
-  text-align: center; /* Changer pour centrer le texte */
-}
 
 .logo-section {
   display: flex;
@@ -76,73 +78,87 @@ button:hover {
   justify-content: center;
   padding: 20px;
   background-color: #ffffff0e; /* Couleur de fond */
-  border: none;
 }
 
 .main-card {
-  background-color: #ffffff0e;
+  background-color: transparent; /* Pas de couleur de fond */
   width: 100%;
   max-width: 1200px; /* Largeur maximale */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre autour de la carte */
-  border: none;
+  box-shadow: none; /* Enlever l'ombre */
+  border: none; /* Enlever la bordure */
   box-sizing: border-box;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Espace entre les sous-cartes */
+  gap: 5px;
+  align-items: stretch; /* Assure que les éléments enfants s'étendent pour avoir la même hauteur */
 }
 
-.text-card, .image-card {
+.text-card {
   flex: 1;
-  min-width: 200px; /* Largeur minimale */
-  background-color: #ffffff0e;
-  border: none;
+  /* min-width: 200px; */
+  /* background-color: transparent; */
+  border: none; /* Enlever la bordure */
+  padding: 20px; /* Ajoute un peu d'espace intérieur */
 }
 
-.image-card img {
+.image-card{
+  flex: 0 0 auto; /* Permet de ne pas étirer cette carte */
+  display: flex; /* Flex pour centrer l'image */
+  align-items: center; /* Centrer verticalement l'image */
+}
+
+/* .image-card img {
   width: 100%;
   height: auto;
-  border-radius: 10px; /* Coins arrondis */
+  border-radius: 0;
+} */
+
+.image-container img {
+  max-height: 400px;
+  width: auto; /* Conserve le ratio de l'image */
 }
 
-.border-left {
+.border-left, .border-right {
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
-  margin-right: auto; /* Ajuster l'espace selon besoin */
-  text-align: center;
+  margin: 0 auto;
+  /* text-align: center; */
+  display: inline-block;
 }
 
-.border-right {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 10px;
-  margin-left: auto; /* Ajuster l'espace selon besoin */
+.text-card.moa {
+  display: flex;
+  flex-direction: column; /* Pour empiler les éléments verticalement */
+  align-items: flex-end; /* Aligner tout le contenu à droite */
 }
 
 .a-link button {
   font-size: 15px;
-  background-color: #78b9ff;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #78b9ff;
   font-weight: bold;
   border-radius: 10px;
   height: 40px;
   margin-top: 30px;
-  border: none;
+  border: 1px solid #78b9ff;
   cursor: pointer;
-  width: 100%; /* Ajuste la largeur pour petits écrans */
+  width: 50%; /* Ajuste la largeur pour petits écrans */
 }
 
-.content-left, .content-left2, .content-right {
+/* .content-left, .content-left2, .content-right {
   padding: 10px;
-}
+} */
+
 
 .content-left {
   font-size: 1.5em;
   text-align: left;
+  /* justify-content: left; */
 }
 
 .content-left2 {
@@ -173,7 +189,7 @@ button:hover {
   padding: 20px;
   margin: 20px 0;
   background-color: #f4f4f4;
-  border-radius: 10px;
+  border-radius: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -232,8 +248,4 @@ button:hover {
     width: 100%;
     margin-bottom: 20px; /* Ajoute un espace entre les cartes */
   }
-
-  
 }
-
-

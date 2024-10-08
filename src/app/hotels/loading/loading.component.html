@@ -8,11 +8,15 @@
     <div class="container">
       <img src="assets/img/logo.png" alt="logo YORI" height="200" width="200">
 
-      <p *ngIf="showFirstParagraph">Veuillez patienter l'ajout de votre établissement sur Yori.com</p>
-      <p *ngIf="showSecondParagraph">L'ajout de votre établissement vous apportera des réservations mondiales</p>
+      <p *ngIf="showFirstParagraph" class="para">Veuillez patienter l'ajout de votre établissement sur Yori.com</p>
+      <p *ngIf="showSecondParagraph" class="para">L'ajout de votre établissement vous apportera des réservations mondiales</p>
 
       <div class="popup" *ngIf="showPopup">
-        <p>Félicitations ! Votre établissement a été ajouté avec succès.</p>
+        <div class="icon-container">
+          <mat-icon>done</mat-icon>
+        </div>
+        <h3>SUCCES!</h3>
+        <p>Votre inscription a été réalisée avec succès.<br>Un e-mail vous sera envoyé sous peu.</p>
       </div>
     </div>
 

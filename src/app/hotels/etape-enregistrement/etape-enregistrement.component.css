@@ -1,9 +1,9 @@
 .container {
-  margin: 20px auto;
-  padding: 20px;
+  width: 50%;
+  margin: 20px 20px 0 0;
+  padding: 20px 0 0 0;
   max-width: 800px;
-  background-color: inherit;
-  box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -14,7 +14,7 @@
 
 .btn1, .btn2 {
   border-radius: 10px;
-  font-size: 22px;
+  font-size: 12px;
   padding: 10px;
 }
 
@@ -73,7 +73,7 @@ button:hover {
 .content {
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
 .content img {
@@ -128,4 +128,9 @@ button:hover {
   margin-left: 20px;
   color: blue;
   text-decoration: none;
+}
+
+#tout{
+  border: none;
+  margin-right: 13px;
 }

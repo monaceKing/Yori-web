@@ -1,14 +1,14 @@
 .container {
   display: flex;
   justify-content: space-between; /* Créer de l'espace entre les cartes */
-  margin-top: 25px;
-  margin: 25px auto; /* Centrer horizontalement */
+  /* margin-top: 25px; */
+  margin: 20px 20px 20px 0; /* Centrer horizontalement */
   /* background-color: rgba(235, 235, 235, 0.826); */
   background-color: initial;
-  padding: 20px;
-  box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
+  /* padding: 20px; */
+  /* box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267); */
   width: 80%;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 mat-label {
@@ -24,7 +24,7 @@ mat-label {
 
 .main-card {
   flex: 1 1 60%; /* Prend 60% de la largeur */
-  background-color: inherit;
+  background-color: white;
   margin-right: 20px; /* Espacement à droite */
 }
 
@@ -35,6 +35,7 @@ mat-label {
 }
 
 #haut {
+  background-color: white;
   margin-top: 10px;
   width: 100%; /* Prend toute la largeur sur petits écrans */
 }
@@ -45,6 +46,13 @@ ul {
 
 .full-width {
   width: 100%; /* Prend toute la largeur sur petits écrans */
+}
+
+.custom-icon {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 /* Ajout de styles pour la responsivité */

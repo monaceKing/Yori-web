@@ -53,12 +53,13 @@
       Prochaine étape <span class="chevron">&#9654;</span>
     </button>
 
-    <button *ngIf="activeTabIndex === 2" (click)="nextTab()" style="margin-top: -25px;">
+    <button type="button" *ngIf="activeTabIndex === 2" (click)="nextTab()" class="full-width-button" style="padding-left: 230px;">
       Finaliser l'inscription
     </button>
 
-    <button *ngIf="activeTabIndex === 3" [routerLink]="['/loading']" style="margin-left: -200px; width: 200px; padding-left: 50px;">
+    <button type="button" *ngIf="activeTabIndex === 3" [routerLink]="['/loading']" class="full-width-button" style="padding-left: 230px;">
       Enregistrer
     </button>
   </div>
 </div>
+ 

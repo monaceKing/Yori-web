@@ -55,11 +55,7 @@
 
       </header>
   </div>
-
-
-
   </div>
-
 
   <div *ngIf="currentRoute === '/list'">
     <div class="container">
@@ -67,9 +63,11 @@
         <div class="logo">
           <img src="assets/img/logo_bleu.png" alt="" height="70" width="100">
         </div>
-        <a href="" [routerLink]="['/espace1']">
-          <button class="premier">Ajoutez votre etablissement</button>
-        </a>
+        <div>
+          <!-- <a> -->
+            <button type="button" [routerLink]="['/espace1']" class="premier">Ajoutez votre etablissement</button>
+          <!-- </a> -->
+        </div>
         <div class="dropdown">
           <button mat-button [matMenuTriggerFor]="menu" class="dropdown">
             <div class="initial-circle">

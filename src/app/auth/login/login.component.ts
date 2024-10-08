@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject, OnDestroy, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 @Component({
 	selector: 'app-login',
 	standalone: true,
-	imports: [ReactiveFormsModule, MatInputModule, MatButtonModule,],
+	imports: [ReactiveFormsModule, MatInputModule, MatButtonModule,CommonModule],
 	templateUrl: './login.component.html',
 	styleUrl: './login.component.css'
 })
@@ -19,6 +19,17 @@ import { CommonModule } from '@angular/common';
 
 
 export class  LoginComponent implements AfterViewInit{
+
+  isLargeScreen: boolean = true;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: null) {
+    this.isLargeScreen = window.innerWidth > 768; // Ajustez la taille selon vos besoins
+  }
+
+  ngOnInit() {
+    this.onResize(null); // Vérifie la taille initiale de l'écran
+  }
 
 	private router = inject(Router);
 	private formBuilder = inject(FormBuilder);

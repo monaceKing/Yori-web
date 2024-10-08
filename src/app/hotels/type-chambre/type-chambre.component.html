@@ -7,7 +7,7 @@
     <mat-card-content>
       <form>
         <br>
-        <mat-form-field appearance="fill" class="full-width">
+        <mat-form-field class="full-width" style="color: white;">
           <mat-label>Selectionnez le nom de votre hébergement</mat-label>
           <mat-select matNativeControl required>
             <mat-option *ngFor="let option of options" [value]="option.value">
@@ -204,7 +204,7 @@
 
   <!-- Deuxième carte qui est superposée au-dessus de la troisième -->
   <div class="sub-card">
-    <mat-card class="sub-card" id="haut">
+    <mat-card id="haut">
       <mat-card-header>
         <mat-icon class="custom-icon" style="margin-top: 15px;"> highlight</mat-icon>
         <p>

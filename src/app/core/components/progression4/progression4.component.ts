@@ -52,24 +52,6 @@ export class Progression4Component implements AfterViewInit {
     localStorage.setItem('activeTabIndex', index.toString());
   }
 
-  // previousTab() {
-  //   if (this.tabGroup) {
-  //     const currentIndex = this.tabGroup.selectedIndex;
-  //     if (currentIndex !== null && currentIndex > 0) {
-  //       this.selectTab(currentIndex - 1);
-  //     }
-  //   }
-  // }
-
-  // nextTab() {
-  //   if (this.tabGroup) {
-  //     const currentIndex = this.tabGroup.selectedIndex;
-  //     if (currentIndex !== null && this.tabGroup._tabs.length > 0 && currentIndex < this.tabGroup._tabs.length - 1) {
-  //       this.selectTab(currentIndex + 1);
-  //     }
-  //   }
-  // }
-
   previousTab() {
     if (this.activeTabIndex > 0) {
       this.activeTabIndex--;
@@ -77,7 +59,7 @@ export class Progression4Component implements AfterViewInit {
   }
 
   nextTab() {
-    if (this.activeTabIndex < 3) { // Permettre d'aller jusqu'au quatrième onglet
+    if (this.activeTabIndex < 3) {
       this.activeTabIndex++;
     }
   }

@@ -28,7 +28,7 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     FormsModule,
     MatDivider,
     MatListModule,
-    MatIcon
+    MatIcon,
   ],
   templateUrl: './commodites.component.html',
   styleUrl: './commodites.component.css'

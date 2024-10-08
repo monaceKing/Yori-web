@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-loading',
@@ -9,7 +10,8 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     MatCardModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatIcon
   ],
   templateUrl: './loading.component.html',
   styleUrl: './loading.component.css'

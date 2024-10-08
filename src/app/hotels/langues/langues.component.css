@@ -1,17 +1,15 @@
 .container {
   display: flex;
   justify-content: center; /* Centrer le contenu */
-  gap: 20px;
-  padding: 20px; /* Padding général */
+  padding: 20px 20px 20px 0; /* Padding général */
   width: 90%; /* Largeur responsive */
   max-width: 800px; /* Limiter la largeur maximale */
-  margin: 0 auto; /* Centrer le conteneur horizontalement */
+ /* Centrer le conteneur horizontalement */
 }
 
 .main-card {
   flex: 1 1 100%; /* S'assure que la carte utilise toute la largeur disponible */
   background-color: rgb(255, 255, 255);
-  padding: 20px; /* Padding à l'intérieur de la carte */
   border-radius: 10px; /* Coins arrondis */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre pour un effet de profondeur */
 }

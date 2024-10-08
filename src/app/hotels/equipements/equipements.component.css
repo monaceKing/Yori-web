@@ -2,16 +2,13 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 25px;
-  margin-left: auto; /* Centrer horizontalement */
-  margin-right: auto; /* Centrer horizontalement */
+  margin: 20px 20px 20px 0;
   margin-bottom: 5px;
   /* background-color: rgba(235, 235, 235, 0.826); */
   background-color: initial;
-  padding: 20px;
-  box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
+  /* box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267); */
   width: 80%;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 /* Styles pour les titres */
@@ -28,7 +25,7 @@ mat-label {
 
 .main-card {
   flex: 1 1 40%; /* Prend 60% de la largeur */
-  background-color: inherit;
+  background-color: white;
 }
 
 /* Sous-carte */
@@ -40,6 +37,7 @@ mat-label {
 #haut {
   margin-top: 10px;
   width: 300px;
+  background-color: white;
 }
 
 ul {

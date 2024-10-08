@@ -2,14 +2,9 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  /* margin-top: 90px; */
-  margin: 40px auto 0; /* Marge en haut, centrer horizontalement */
-  /* background-color: rgba(235, 235, 235, 0.826); */
+  margin: 20px 20px 20px 0;
   background-color: initial;
-  padding: 20px;
-  box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267);
   width: 80%;
-  border-radius: 10px;
 }
 
 mat-label {
@@ -24,14 +19,19 @@ mat-label {
 }
 
 .main-card {
- /* Prend 40% de la largeur */
-  background-color: inherit;
+  background-color: white;
 }
 
 .sub-card {
   flex: 1 1 40%;
+  background-color: initial;
+}
+
+#haut{
   margin-bottom: 10px;
   background-color: inherit;
+  background-color: white;
+
 }
 
 ul {

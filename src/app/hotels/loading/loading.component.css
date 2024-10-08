@@ -31,4 +31,33 @@
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Assurez-vous que le pop-up est au-dessus des autres éléments */
+  border-radius: 15px;
+}
+
+.para{
+  color: white;
+}
+
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center; /* Centre le conteneur horizontalement */
+  align-items: center; /* Centre le conteneur verticalement */
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center; /* Centre l'icône horizontalement */
+  align-items: center; /* Centre l'icône verticalement */
+  background-color: #77B5FE; /* Couleur bleu ciel */
+  border-radius: 50%; /* Crée un cercle */
+  width: 50px; /* Largeur du cercle */
+  height: 50px; /* Hauteur du cercle */
+  margin-left: 130px;
+}
+
+mat-icon {
+  color: white; /* Couleur de l'icône en blanc */
+  font-size: 24px; /* Taille de l'icône, ajustez si nécessaire */
 }
