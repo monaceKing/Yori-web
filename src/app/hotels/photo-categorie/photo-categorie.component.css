@@ -3,8 +3,8 @@
   justify-content: center;
   gap: 20px;
   background-color: inherit;
-  width: 80%;
-  margin: 20px 20px 20px 0;
+  width: 100%;
+  margin: 20px 0 20px 0;
 }
 
 mat-label{
@@ -20,28 +20,20 @@ mat-label{
 }
 
 .main-card {
-  flex: 1 1 40%;
+  flex: 1 60%;
   background-color: white;
 }
 
-.right-column {
-  flex: 1 1 40%;
-   /* Prend 40% de la largeur */
-  position: relative;
-}
 
 .sub-card {
-  margin-bottom: 10px; /* Espace de 10px entre les cartes superposées */
-  /* background-color: blue; */
+  flex: 1 40%;
+  margin-bottom: 10px; 
   background-color: inherit;
-  /* margin-left: 100px; */
 }
 
 
 #haut{
   background-color: white;
-  margin-top: 10px;
-  width: 300px;
 }
 
 

@@ -8,12 +8,15 @@
 } */
 
 .home-container {
-  width: 98%; /* Définit la largeur de la div principale */
+  width: auto; /* Définit la largeur de la div principale */
   text-align: center;
-  margin: 0 auto; /* Centre la div horizontalement */
+  /* margin: 0 auto; Centre la div horizontalement */
   display: flex; /* Utilise Flexbox pour le centrage */
   flex-direction: column; /* Aligne les éléments verticalement */
-   /* Centre le texte à l'intérieur de la div */
+}
+
+.Tsections{
+  margin: 0 100px;
 }
 
 #fin{
@@ -21,6 +24,7 @@
   border-radius: 10px;
   height: 100px;
   padding-bottom: 50px;
+  width: auto;
 }
 
 .premier {
@@ -104,10 +108,8 @@ button:hover {
 
 .text-card {
   flex: 1;
-  /* min-width: 200px; */
-  /* background-color: transparent; */
-  border: none; /* Enlever la bordure */
-  padding: 20px; /* Ajoute un peu d'espace intérieur */
+  margin: 0;
+  padding: 0px; /* Ajoute un peu d'espace intérieur */
 }
 
 .image-card{
@@ -115,12 +117,6 @@ button:hover {
   display: flex; /* Flex pour centrer l'image */
   align-items: center; /* Centrer verticalement l'image */
 }
-
-/* .image-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-} */
 
 .image-container img {
   max-height: 400px;

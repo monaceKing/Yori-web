@@ -1,12 +1,11 @@
 .container {
   display: flex;
   flex-wrap: wrap; /* Permet aux éléments de s'enrouler */
-  margin: 25px 30px 5px 0; /* Marges combinées */
-  padding: 0p 20px 20px 0;
-  /* box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267); */
-  width: 90%;
+  /* margin: 25px 30px 5px 0;  */
+  padding: 20px 0 20px 0;
+  width: 100%;
   border-radius: 10px;
-  gap: 20px; /* Espace entre les éléments */
+  gap: 20px; 
   background-color: inherit;
 
 }
@@ -28,6 +27,7 @@
   flex:1 30%; /* 30% de la largeur */
   background-color: rgb(255, 255, 255);
   height: 300px;
+  width: auto;
 }
 
 

@@ -3,24 +3,28 @@
     flex-direction: column;
     justify-content: space-between;
     height: 40vh; /* Ajuste la hauteur selon tes besoins */
-    background: #62c3fc;
-    margin-right: 10px;
-    margin-left: 10px;
+    background: #77B5FE;
+    padding-left: 30px;
+    width: auto;
     border-radius: 5px;
 }
 
+.vertical-line {
+    width: 2px; /* Épaisseur de la ligne */
+    height: 100px; /* Longueur de la ligne */
+    background-color: white; /* Couleur de la ligne */
+    margin: 20px; /* Marge autour de la ligne (optionnelle) */
+}
+
+
 .row {
     display: flex;
-    /* width: 100%; */
-     /* Assure que la ligne occupe toute la largeur */
 }
 
 .gauche,
 .droit {
-    flex: 1; /* Chaque div prendra 50% de la largeur disponible */
+    flex: 1;
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center;/* */
     padding: 20px; /* Optionnel : ajoute un peu d'espace intérieur */
 }
 
@@ -42,11 +46,12 @@
 
 
 .large {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     color: white;
     margin-bottom: 30px;
-    background-color: #62c3fc; 
+    background-color: #77B5FE; 
+    margin-right: 300px;
 }
 .droit {
     display: flex;
@@ -55,6 +60,7 @@
     justify-content: left; /* Centre verticalement */
     height: 100%; /* Assure que la div prend toute la hauteur disponible */
     color: white;
+    margin-right: 600px;
 }
 
 .droit h4,

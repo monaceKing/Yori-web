@@ -5,7 +5,7 @@
       <mat-card-title>Configurez votre type de chambre</mat-card-title><br>
     </mat-card-header>
     <mat-card-content>
-      <form>
+      <form> 
         <br>
         <mat-form-field class="full-width" style="color: white;">
           <mat-label>Selectionnez le nom de votre hébergement</mat-label>
@@ -40,123 +40,6 @@
             </div>
           </mat-card-header>
         </mat-card>
-
-
-        <!-- <mat-card class="example-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>
-                <div style="display: flex;">
-                  <img mat-card-sm-image src="assets/img/lit.png" style="margin-bottom: 20px;" height="50" width="50">
-                  <span style="font-size: 15px; margin-left: 5px;">lit double <br> 131-150 cm de large</span><br>
-                </div>
-              </mat-card-title>
-            </mat-card-title-group>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-                <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
-              </div>
-            </div>
-          </mat-card-header>
-        </mat-card>
-        <mat-card class="example-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>
-                <div style="display: flex;">
-                  <img mat-card-sm-image src="assets/img/lit.png" style="margin-bottom: 20px;" height="50" width="50">
-                  <span style="font-size: 15px; margin-left: 5px;">lit King-Size <br> 151-180 cm</span><br>
-                </div>
-              </mat-card-title>
-            </mat-card-title-group>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-                <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
-              </div>
-            </div>
-          </mat-card-header>
-        </mat-card>
-        <mat-card class="example-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>
-                <div style="display: flex;">
-                  <img mat-card-sm-image src="assets/img/lit.png" style="margin-bottom: 20px;" height="50" width="50">
-                  <span style="font-size: 15px; margin-left: 5px;">grand lit King-Size <br> 181-210 cm</span><br>
-                </div>
-              </mat-card-title>
-            </mat-card-title-group>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-                <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
-              </div>
-            </div>
-          </mat-card-header>
-        </mat-card>
-        <mat-card class="example-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>
-                <div style="display: flex;">
-                  <img mat-card-sm-image src="assets/img/lit.png" style="margin-bottom: 20px;" height="50" width="50">
-                  <span style="font-size: 15px; margin-left: 5px;">lit superposé <br> Dimensions variables</span><br>
-                </div>
-              </mat-card-title>
-            </mat-card-title-group>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-                <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
-              </div>
-            </div>
-          </mat-card-header>
-        </mat-card>
-        <mat-card class="example-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>
-                <div style="display: flex;">
-                  <img mat-card-sm-image src="assets/img/lit.png" style="margin-bottom: 20px;" height="50" width="50">
-                  <span style="font-size: 15px; margin-left: 5px;">Dimensions variables <br> Dimensions variables</span><br>
-                </div>
-              </mat-card-title>
-            </mat-card-title-group>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-                <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
-              </div>
-            </div>
-          </mat-card-header>
-        </mat-card>
-        <mat-card class="example-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>
-                <div style="display: flex;">
-                  <img mat-card-sm-image src="assets/img/lit.png" style="margin-bottom: 20px;" height="50" width="50">
-                  <span style="font-size: 15px; margin-left: 5px;">futon <br> Dimensions variables</span><br>
-                </div>
-              </mat-card-title>
-            </mat-card-title-group>
-            <div class="quantity-container">
-              <div class="quantity">
-                <button (click)="quantity('min')" class="btn btn-black" [disabled]="productquantity <= 1"><strong>-</strong></button>
-                <input class="inputbox" type="text" disabled [value]="productquantity" id="">
-                <button (click)="quantity('max')" class="btn btn-blue"><strong>+</strong></button>
-              </div>
-            </div>
-          </mat-card-header>
-        </mat-card> -->
-
         <div style="margin: 40px;">
           <p>Combien de personnes peuvent séjourner dans cette
             catégorie hébergement ?
@@ -206,7 +89,7 @@
   <div class="sub-card">
     <mat-card id="haut">
       <mat-card-header>
-        <mat-icon class="custom-icon" style="margin-top: 15px;"> highlight</mat-icon>
+        <mat-icon class="custom-icon" style="margin-top: 10px;"> highlight</mat-icon>
         <p>
           Proposez-vous d'autres couchages?
         </p>

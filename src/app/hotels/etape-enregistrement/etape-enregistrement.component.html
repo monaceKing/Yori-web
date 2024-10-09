@@ -20,7 +20,7 @@
   </mat-card>
 
 <!-- Étape 2 - Infos sur l'hébergement -->
-<mat-card class="example-card" appearance="outlined" id="tout">
+<mat-card class="example-card" appearance="outlined"> 
   <ng-container *ngIf="currentRoute === '/ajout-hotel'">
     <mat-card-header>
       <mat-card-title-group>
@@ -28,7 +28,7 @@
           <mat-icon style="color: rgb(14, 14, 14);">weekend</mat-icon>
           Étape 2 - Infos sur l'hébergement
         </mat-card-title>
-        <button mat-flat-button class="btn1" [routerLink]="['/info-hotel']">Ajouter une offre</button>
+        <button  class="btn1" [routerLink]="['/info-hotel']">Ajouter une offre</button>
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content>
@@ -76,7 +76,7 @@
       <div class="horizontal-line"></div>
       <hr>
       <div class="actions">
-        <div class="right-actions" style="margin-left: 400px;">
+        <div class="right-actions">
           <button class="btnOffre">Ajouter une offre</button>
         </div>
       </div>
@@ -142,7 +142,7 @@
             <mat-icon style="color: rgb(14, 14, 14);">assignment</mat-icon>
             Étape 4 - Dernières étapes
           </mat-card-title>
-          <button mat-flat-button [routerLink]="['/finalisation']">Ajouter les dernières informations</button>
+          <button mat-flat-button class="ajoutInfo"  [routerLink]="['/finalisation']">Ajouter les dernières informations</button>
         </mat-card-title-group>
       </mat-card-header>
       <mat-card-content>

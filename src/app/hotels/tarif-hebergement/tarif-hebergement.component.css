@@ -1,14 +1,9 @@
 .container {
   display: flex;
-  justify-content: space-between; /* Créer de l'espace entre les cartes */
-  /* margin-top: 25px; */
-  margin: 20px 20px 20px 0; /* Centrer horizontalement */
-  /* background-color: rgba(235, 235, 235, 0.826); */
+  justify-content: space-between;
+  margin: 20px 0 20px 0; 
   background-color: initial;
-  /* padding: 20px; */
-  /* box-shadow: 4px 4px 10px rgba(57, 55, 55, 0.267); */
-  width: 80%;
-  /* border-radius: 10px; */
+  width: 100%;
 }
 
 mat-label {
@@ -29,14 +24,13 @@ mat-label {
 }
 
 .sub-card {
-  flex: 1 1 35%; /* Prend 35% de la largeur */
-  margin-left: 10px; /* Espacement à gauche */
+  flex: 1 1 40%; 
   background-color: inherit;
 }
 
 #haut {
   background-color: white;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   width: 100%; /* Prend toute la largeur sur petits écrans */
 }
 

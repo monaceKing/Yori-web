@@ -18,54 +18,7 @@
       </ng-template>
       <app-etape-enregistrement></app-etape-enregistrement>
     </mat-tab>
-    <!-- <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 2}">3</div>
-          <div class="circle-title">Paiement</div>
-        </div>
-      </ng-template>
-      <app-paiement></app-paiement>
-    </mat-tab>
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">4</div>
-          <div class="circle-title">Bon à savoir</div>
-        </div>
-      </ng-template>
-      <app-a-savoir></app-a-savoir>
-    </mat-tab>
-
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}">5</div>
-          <div class="circle-title">Progression</div>
-        </div>
-      </ng-template>
-      <app-etape-enregistrement></app-etape-enregistrement>
-    </mat-tab>
-
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <div class="circle-container">
-          <div class="circle" [ngClass]="{'active': activeTabIndex >= 5}">6</div>
-          <div class="circle-title">uSER</div>
-        </div>
-      </ng-template>
-      <app-proprietaire></app-proprietaire>
-    </mat-tab> -->
-
   </mat-tab-group>
-  <!-- <div class="tab-navigation-buttons">
-    <button (click)="previousTab()">
-      <span class="chevron">&#9664;</span> Précédent
-    </button>
-    <button (click)="nextTab()">
-      prochaine étape <span class="chevron">&#9654;</span>
-    </button>
-  </div> -->
   <div class="tab-navigation-buttons" *ngIf="activeTabIndex < 1">
     <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
       <span class="chevron">&#9664;</span> Précédent
