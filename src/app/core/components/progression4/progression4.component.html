@@ -41,7 +41,12 @@
     </mat-tab>
   </mat-tab-group>
 
-  <div class="tab-navigation-buttons">
+  <div class="tab-navigation tab-navigation-buttons"
+  [ngClass]="{
+    'style0': activeTabIndex === 0,
+    'style1': activeTabIndex === 1,
+    'style2': activeTabIndex === 2,
+  }">
     <button *ngIf="activeTabIndex === 0" (click)="nextTab()">
       Prochaine étape <span class="chevron">&#9654;</span>
     </button>
@@ -53,13 +58,38 @@
       Prochaine étape <span class="chevron">&#9654;</span>
     </button>
 
-    <button type="button" *ngIf="activeTabIndex === 2" (click)="nextTab()" class="full-width-button" style="padding-left: 230px;">
+    <button type="button" *ngIf="activeTabIndex === 2" (click)="nextTab()" class="full-width-button1" style="margin-top:0px;padding-left: 230px">
       Finaliser l'inscription
     </button>
 
-    <button type="button" *ngIf="activeTabIndex === 3" [routerLink]="['/loading']" class="full-width-button" style="padding-left: 230px;">
+    <button type="button" *ngIf="activeTabIndex === 3" [routerLink]="['/loading']" class="full-width-button" style="padding-left: 230px; margin-top: 0px;">
       Enregistrer
     </button>
   </div>
+
+
+<!-- <div class="tab-navigation tab-navigation-buttons" *ngIf="activeTabIndex < 4" 
+     [ngClass]="{
+       'style1': activeTabIndex === 1,
+       'style3': activeTabIndex === 3,
+       'style4': activeTabIndex === 4,
+       'style5': activeTabIndex === 5,
+       'style2': activeTabIndex === 2,
+       'style6': activeTabIndex === 6,
+     }">
+  <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
+    <span class="chevron">&#9664;</span> Précédent
+  </button>
+  <button (click)="nextTab()">
+    prochaine étape <span class="chevron">&#9654;</span>
+  </button>
+  <button type="button" *ngIf="activeTabIndex === 2" (click)="nextTab()" class="full-width-button" style="padding-left: 230px;">
+    Finaliser l'inscription
+  </button>
+
+  <button type="button" *ngIf="activeTabIndex === 3" [routerLink]="['/loading']" class="full-width-button" style="padding-left: 230px;">
+    Enregistrer
+  </button>
+</div> -->
 </div>
  

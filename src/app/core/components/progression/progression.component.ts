@@ -16,15 +16,6 @@ import { MatIcon } from '@angular/material/icon';
 import { LanguesComponent } from "../../../hotels/langues/langues.component";
 import { PolitiqueComponent } from "../../../hotels/politique/politique.component";
 import { EtapeEnregistrementComponent } from "../../../hotels/etape-enregistrement/etape-enregistrement.component";
-import { TypeChambreComponent } from "../../../hotels/type-chambre/type-chambre.component";
-import { SalleBainComponent } from "../../../hotels/salle-bain/salle-bain.component";
-import { EquipementsComponent } from "../../../hotels/equipements/equipements.component";
-import { TarifHebergementComponent } from "../../../hotels/tarif-hebergement/tarif-hebergement.component";
-import { PhotoCategorieComponent } from "../../../hotels/photo-categorie/photo-categorie.component";
-import { ImagesEtablissementComponent } from "../../../hotels/images-etablissement/images-etablissement.component";
-import { GoogleMapComponent } from "../../../hotels/google-map/google-map.component";
-import { PaiementComponent } from "../../../hotels/paiement/paiement.component";
-import { ASavoirComponent } from "../../../hotels/a-savoir/a-savoir.component";
 
 @Component({
   selector: 'app-progression',
@@ -49,19 +40,11 @@ import { ASavoirComponent } from "../../../hotels/a-savoir/a-savoir.component";
     LanguesComponent,
     PolitiqueComponent,
     EtapeEnregistrementComponent,
-    TypeChambreComponent,
-    SalleBainComponent,
-    EquipementsComponent,
-    TarifHebergementComponent,
-    PhotoCategorieComponent,
-    ImagesEtablissementComponent,
-    GoogleMapComponent,
-    PaiementComponent,
-    ASavoirComponent
 ],
   templateUrl: './progression.component.html',
   styleUrl: './progression.component.css'
 })
+
 export class ProgressionComponent implements AfterViewInit {
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0;
@@ -96,4 +79,5 @@ export class ProgressionComponent implements AfterViewInit {
       this.selectTab(this.activeTabIndex + 1);
     }
   }
+
 }

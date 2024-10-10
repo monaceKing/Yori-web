@@ -1,24 +1,22 @@
 .container {
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de s'enrouler */
-  /* margin: 25px 30px 5px 0;  */
+  justify-content: center;
+  gap: 20px;
+  background-color: initial;
   padding: 20px 0 20px 0;
   width: 100%;
   border-radius: 10px;
-  gap: 20px; 
-  background-color: inherit;
-
 }
 
 
 .main-card {
-  flex: 1 60%; /* 60% de la largeur */
+  flex: 1 1 80%; /* 60% de la largeur */
   background-color: white;
   min-width: 300px; /* Assure une largeur minimale */
 }
 
 .sub-card {
-  flex:1 30%; /* 30% de la largeur */
+  flex:1 1 40%; /* 30% de la largeur */
 }
 
 #haut {
