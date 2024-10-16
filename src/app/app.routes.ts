@@ -14,15 +14,7 @@ import { ClientLayoutComponent } from './core/components/layouts/client-layout/c
 import { Espace1Component } from './hotels/espace1/espace1.component';
 import { ListeEtablissementsComponent } from './hotels/liste-etablissements/liste-etablissements.component';
 import { ChoixEtablissementComponent } from './etablissements/choix-etablissement/choix-etablissement.component';
-import { EtablissementLayoutComponent } from './core/components/layouts/etablissement-layout/etablissement-layout.component';
 import { AjoutEtablissementComponent } from './core/components/layouts/ajout-etablissement/ajout-etablissement.component';
-import { FormInfoGeneralesComponent } from './hotels/form-info-generales/form-info-generales.component';
-import { FormLocalisationComponent } from './hotels/form-localisation/form-localisation.component';
-import { FormCaracteristiqueComponent } from './hotels/form-caracteristique/form-caracteristique.component';
-import { FormRegleConditionsComponent } from './hotels/form-regle-conditions/form-regle-conditions.component';
-import { FormTarifsComponent } from './hotels/form-tarifs/form-tarifs.component';
-import { FormPhotosComponent } from './hotels/form-photos/form-photos.component';
-import { StepperComponent } from './core/components/stepper/stepper.component';
 import { ProgressionComponent } from './core/components/progression/progression.component';
 import { Progression2Component } from './core/components/progression2/progression2.component';
 import { Progression3Component } from './core/components/progression3/progression3.component';

@@ -27,9 +27,7 @@ export class TarifHebergementComponent {
 
   somme: number = 0;
   pourcentage: number = 0;
-  
   monnaie: string = 'F CFA'; // Valeur par défaut
-
   calculerPourcentage() {
     this.pourcentage = this.somme * 0.15; // 15% de la somme
     console.log(`Somme: ${this.somme}, Pourcentage: ${this.pourcentage} ${this.monnaie}`);

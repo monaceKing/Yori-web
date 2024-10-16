@@ -74,8 +74,7 @@
               <div class="circle-title">Les tarifs</div>
             </div>
           </ng-template>
-          <!-- <app-politique></app-politique> -->
-           <h1>Page8</h1>
+          <app-tarifs></app-tarifs>
         </mat-tab>
         <mat-tab>
           <ng-template mat-tab-label>
@@ -84,8 +83,7 @@
               <div class="circle-title">Progression</div>
             </div>
           </ng-template>
-          <!-- <app-etape-enregistrement></app-etape-enregistrement> -->
-           <h1>Page9</h1>
+         <app-fin-etape1></app-fin-etape1>
         </mat-tab>
       </mat-tab-group>
       <div class="tab-navigation tab-navigation-buttons" *ngIf="activeTabIndex < 8" 
@@ -97,6 +95,7 @@
          'style5': activeTabIndex === 5,
          'style2': activeTabIndex === 2,
          'style6': activeTabIndex === 6,
+         'style7': activeTabIndex === 7,
        }">
     <button *ngIf="activeTabIndex > 0" (click)="previousTab()">
       <span class="chevron">&#9664;</span> Précédent

@@ -11,10 +11,10 @@
         <div>
           <input type="number" placeholder="CFA |" required [(ngModel)]="somme" name="tarif" (ngModelChange)="calculerPourcentage()">
           <select [(ngModel)]="monnaie" (change)="calculerPourcentage()" name="monnaie" style="margin-left: 10px;">
-            <option value="F CFA">F CFA</option>
+            <option value="FCFA">F CFA</option>
             <option value="Euro">Euro</option>
             <option value="Dollar">Dollar</option>
-            <option value="Autres">Autres</option>
+            <!-- <option value="Autres">Autres</option> -->
           </select>
         </div>
         <!-- <button type="submit">Soumettre</button> -->

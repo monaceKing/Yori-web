@@ -20,6 +20,8 @@ import { PolitiqueRembourssementComponent } from "./politique-rembourssement/pol
 import { InfoImportantesComponent } from "./info-importantes/info-importantes.component";
 import { InfoComplementairesComponent } from "./info-complementaires/info-complementaires.component";
 import { InclusComponent } from "./inclus/inclus.component";
+import { TarifsComponent } from "./tarifs/tarifs.component";
+import { FinEtape1Component } from "./fin-etape1/fin-etape1.component";
 
 @Component({
   selector: 'app-tourims-progression1',
@@ -47,7 +49,9 @@ import { InclusComponent } from "./inclus/inclus.component";
     PolitiqueRembourssementComponent,
     InfoImportantesComponent,
     InfoComplementairesComponent,
-    InclusComponent
+    InclusComponent,
+    TarifsComponent,
+    FinEtape1Component
 ],
   templateUrl: './tourims-progression1.component.html',
   styleUrl: './tourims-progression1.component.css'
@@ -56,7 +60,7 @@ export class TourimsProgression1Component implements AfterViewInit{
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0; 
 
-  ngAfterViewInit() {
+  ngAfterViewInit() { 
     setTimeout(() => {
       const savedIndex = localStorage.getItem('activeTabIndex');
       this.activeTabIndex = savedIndex ? +savedIndex : 0;
