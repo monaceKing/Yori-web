@@ -18,9 +18,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class EtapeEnregistrementComponent implements OnInit{
   currentRoute: string = '';
-
   constructor(private router: Router) {}
-
   ngOnInit(): void {
     this.currentRoute = this.router.url; // Récupère la route actuelle
     this.router.events.subscribe(() => {

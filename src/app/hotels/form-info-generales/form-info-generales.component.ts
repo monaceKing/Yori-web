@@ -1,11 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle } from '@angular/material/card';
+import { MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle, MatCardTitleGroup } from '@angular/material/card';
 import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatOption, MatSelect, MatSelectModule } from '@angular/material/select';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router, RouterLink } from '@angular/router';
 
 
 const THUMBUP_ICON =
@@ -28,6 +30,7 @@ const THUMBUP_ICON =
   imports: [
     MatCard,
     MatCardTitle,
+    MatCardTitleGroup,
     MatLabel,
     MatCardHeader,
     MatCardFooter,
@@ -39,15 +42,24 @@ const THUMBUP_ICON =
     MatSelectModule,
     MatInputModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    RouterLink,
+    CommonModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './form-info-generales.component.html',
   styleUrl: './form-info-generales.component.css'
-})
+}) 
 export class FormInfoGeneralesComponent {
-
-  constructor() {
+  currentRoute: string = '';  
+  ngOnInit(): void {
+    this.currentRoute = this.router.url; // Récupère la route actuelle
+    this.router.events.subscribe(() => {
+      this.currentRoute = this.router.url; // Met à jour la route si elle change
+    });
+  }
+  
+  constructor( private router: Router) {
     const iconRegistry = inject(MatIconRegistry);
     const sanitizer = inject(DomSanitizer);
 
@@ -56,5 +68,9 @@ export class FormInfoGeneralesComponent {
     // `iconRegistry.addSvgIcon('thumbs-up', sanitizer.bypassSecurityTrustResourceUrl('icon.svg'));`
     iconRegistry.addSvgIconLiteral('thumbs-up', sanitizer.bypassSecurityTrustHtml(THUMBUP_ICON));
   }
+
+
+
+  
 
 }

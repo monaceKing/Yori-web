@@ -44,7 +44,7 @@ import { EtapeEnregistrementComponent } from "../../../hotels/etape-enregistreme
   templateUrl: './progression.component.html',
   styleUrl: './progression.component.css'
 })
-
+ 
 export class ProgressionComponent implements AfterViewInit {
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0;

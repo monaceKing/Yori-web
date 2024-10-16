@@ -28,6 +28,8 @@ import { Progression2Component } from './core/components/progression2/progressio
 import { Progression3Component } from './core/components/progression3/progression3.component';
 import { Progression4Component } from './core/components/progression4/progression4.component';
 import { LoadingComponent } from './hotels/loading/loading.component';
+import { LayoutTourismComponent } from './core/components/layouts/layout-tourism/layout-tourism.component';
+import { TourimsProgression1Component } from './tourism/tourims-progression1/tourims-progression1.component';
 
 export const routes: Routes =  [
     {
@@ -39,6 +41,10 @@ export const routes: Routes =  [
         // Ajoutez d'autres routes nécessitant le header1 et footer ici
       ]
     },
+
+
+
+
     {
       path: '',
       component: AuthLayoutComponent,
@@ -49,6 +55,8 @@ export const routes: Routes =  [
         // Ajoutez d'autres routes nécessitant pas le header et footer ici
       ]
     },
+
+        // Côté Hotel
     {
       path: '',
       component: ClientLayoutComponent,
@@ -59,7 +67,6 @@ export const routes: Routes =  [
         // Ajoutez d'autres routes nécessitant le header2 et footer ici
       ]
     },
-
     {
       path: '',
       component: AjoutEtablissementComponent,
@@ -72,8 +79,22 @@ export const routes: Routes =  [
       ]
     },
 
-    { path:'loading', component: LoadingComponent},
 
+
+    //Côté Tourisme
+    
+    {
+      path: '',
+      component: LayoutTourismComponent,
+      children:[
+        { path: 'ajout-tourism', component:TourimsProgression1Component},
+      ]
+    },
+
+
+
+
+    { path:'loading', component: LoadingComponent},
     { path: '**', component: PageErrorComponent } // Redirige pour les routes inconnues
   ];
 
