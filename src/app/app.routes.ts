@@ -24,6 +24,14 @@ import { LayoutTourismComponent } from './core/components/layouts/layout-tourism
 import { TourimsProgression1Component } from './tourism/tourims-progression1/tourims-progression1.component';
 import { TourimsProgression2Component } from './tourism/tourims-progression2/tourims-progression2.component';
 import { TourimsProgression3Component } from './tourism/tourims-progression3/tourims-progression3.component';
+import { NomUtilisateurComponent } from './ADMIN_CLIENT/components/nom-utilisateur/nom-utilisateur.component';
+import { MotDePasseComponent } from './ADMIN_CLIENT/components/mot-de-passe/mot-de-passe.component';
+import { ProblemeConnexionComponent } from './ADMIN_CLIENT/components/probleme-connexion/probleme-connexion.component';
+import { PasseOublieComponent } from './ADMIN_CLIENT/components/passe-oublie/passe-oublie.component';
+import { CreerCompteComponent } from './ADMIN_CLIENT/components/creer-compte/creer-compte.component';
+import { InfosUtilisateurComponent } from './ADMIN_CLIENT/components/infos-utilisateur/infos-utilisateur.component';
+import { CreerPasseComponent } from './ADMIN_CLIENT/components/creer-passe/creer-passe.component';
+import { ContacterEquipeComponent } from './ADMIN_CLIENT/components/contacter-equipe/contacter-equipe.component';
 
 export const routes: Routes =  [
     {
@@ -35,8 +43,6 @@ export const routes: Routes =  [
         // Ajoutez d'autres routes nécessitant le header1 et footer ici
       ]
     },
-
-
 
 
     {
@@ -74,7 +80,6 @@ export const routes: Routes =  [
     },
 
 
-
     //Côté Tourisme 
     
     {
@@ -88,6 +93,21 @@ export const routes: Routes =  [
     },
 
 
+      //ADMIN_CLIENT
+      {
+        path:'',
+        component:AuthLayoutComponent,
+        children:[
+          {path:'connectez-vous', component:NomUtilisateurComponent},
+          {path:'mot-de-passe', component:MotDePasseComponent},
+          {path:'probleme-connexion', component:ProblemeConnexionComponent},
+          {path:'mot-de-passe-oublier', component:PasseOublieComponent},
+          {path:'creer-compte', component:CreerCompteComponent},
+          {path:'infos-utilisateur', component:InfosUtilisateurComponent},
+          {path:'creer-passe', component:CreerPasseComponent},
+          {path:'contacter-equipe', component:ContacterEquipeComponent},
+        ]
+      },
 
 
     { path:'loading', component: LoadingComponent},
