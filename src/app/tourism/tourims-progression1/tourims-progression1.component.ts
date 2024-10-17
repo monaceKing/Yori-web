@@ -57,16 +57,19 @@ import { FinEtape1Component } from "./fin-etape1/fin-etape1.component";
   styleUrl: './tourims-progression1.component.css'
 })
 export class TourimsProgression1Component implements AfterViewInit{
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
+  }
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0; 
 
-  ngAfterViewInit() { 
-    setTimeout(() => {
-      const savedIndex = localStorage.getItem('activeTabIndex');
-      this.activeTabIndex = savedIndex ? +savedIndex : 0;
-      this.selectTab(this.activeTabIndex);
-    });
-  }
+  // ngAfterViewInit() { 
+  //   setTimeout(() => {
+  //     const savedIndex = localStorage.getItem('activeTabIndex');
+  //     this.activeTabIndex = savedIndex ? +savedIndex : 0;
+  //     this.selectTab(this.activeTabIndex);
+  //   });
+  // }
 
   onTabChange(event: MatTabChangeEvent) {
     this.activeTabIndex = event.index;

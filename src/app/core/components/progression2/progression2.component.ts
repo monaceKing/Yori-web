@@ -63,14 +63,17 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './progression2.component.css'
 })
 export class Progression2Component implements  AfterViewInit{
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
+  }
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0;
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.selectTab(this.activeTabIndex);
-    });
-  }
+  // ngAfterViewInit() {
+  //   setTimeout(() => {
+  //     this.selectTab(this.activeTabIndex);
+  //   });
+  // }
 
   onTabChange(event: any) {
     this.activeTabIndex = event.index;

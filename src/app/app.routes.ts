@@ -22,6 +22,8 @@ import { Progression4Component } from './core/components/progression4/progressio
 import { LoadingComponent } from './hotels/loading/loading.component';
 import { LayoutTourismComponent } from './core/components/layouts/layout-tourism/layout-tourism.component';
 import { TourimsProgression1Component } from './tourism/tourims-progression1/tourims-progression1.component';
+import { TourimsProgression2Component } from './tourism/tourims-progression2/tourims-progression2.component';
+import { TourimsProgression3Component } from './tourism/tourims-progression3/tourims-progression3.component';
 
 export const routes: Routes =  [
     {
@@ -73,13 +75,15 @@ export const routes: Routes =  [
 
 
 
-    //Côté Tourisme
+    //Côté Tourisme 
     
     {
       path: '',
       component: LayoutTourismComponent,
       children:[
         { path: 'ajout-tourism', component:TourimsProgression1Component},
+        { path: 'photo-tourism', component:TourimsProgression2Component},
+        { path: 'complement-tourism', component:TourimsProgression3Component},
       ]
     },
 

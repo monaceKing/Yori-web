@@ -45,9 +45,6 @@
   height: auto; /* Maintient le ratio de l'image */
 }
 
-.red{
-  color: red;
-}
 
 
 @media (max-width: 768px) {

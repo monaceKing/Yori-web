@@ -13,7 +13,7 @@ import { Router, RouterLink } from '@angular/router';
     RouterLink,
     CommonModule
   ],
-  templateUrl: './fin-etape1.component.html',
+  templateUrl: './fin-etape1.component.html', 
   styleUrl: './fin-etape1.component.css'
 })
 export class FinEtape1Component implements OnInit{

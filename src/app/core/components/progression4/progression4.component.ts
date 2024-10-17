@@ -25,22 +25,25 @@ import { RouterLink } from '@angular/router';
     MatTabsModule,
     MatProgressBar,
     MatIcon,
-    RouterLink
+    RouterLink 
 ],
   templateUrl: './progression4.component.html',
   styleUrl: './progression4.component.css'
 })
 export class Progression4Component implements AfterViewInit {
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
 
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0;
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.selectTab(this.activeTabIndex);
-    });
-  }
+  // ngAfterViewInit() {
+  //   setTimeout(() => {
+  //     this.selectTab(this.activeTabIndex);
+  //   });
+  // }
 
   onTabChange(event: any) {
     this.activeTabIndex = event.index;
