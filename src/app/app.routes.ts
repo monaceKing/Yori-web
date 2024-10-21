@@ -101,7 +101,7 @@ export const routes: Routes =  [
           {path:'connectez-vous', component:NomUtilisateurComponent},
           {path:'mot-de-passe', component:MotDePasseComponent},
           {path:'probleme-connexion', component:ProblemeConnexionComponent},
-          {path:'mot-de-passe-oublier', component:PasseOublieComponent},
+          {path:'passe-oublier', component:PasseOublieComponent},
           {path:'creer-compte', component:CreerCompteComponent},
           {path:'infos-utilisateur', component:InfosUtilisateurComponent},
           {path:'creer-passe', component:CreerPasseComponent},
