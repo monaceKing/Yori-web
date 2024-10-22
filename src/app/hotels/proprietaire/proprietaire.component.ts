@@ -31,7 +31,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     MatInputModule,
     ReactiveFormsModule,
     CommonModule
-
   ],
   templateUrl: './proprietaire.component.html',
   styleUrl: './proprietaire.component.css'

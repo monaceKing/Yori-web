@@ -32,6 +32,7 @@ import { CreerCompteComponent } from './ADMIN_CLIENT/components/creer-compte/cre
 import { InfosUtilisateurComponent } from './ADMIN_CLIENT/components/infos-utilisateur/infos-utilisateur.component';
 import { CreerPasseComponent } from './ADMIN_CLIENT/components/creer-passe/creer-passe.component';
 import { ContacterEquipeComponent } from './ADMIN_CLIENT/components/contacter-equipe/contacter-equipe.component';
+import { InterfaceLayoutComponent } from './ADMIN_CLIENT/interfaces/interface-layout/interface-layout.component';
 
 export const routes: Routes =  [
     {
@@ -94,6 +95,8 @@ export const routes: Routes =  [
 
 
       //ADMIN_CLIENT
+
+      // 1 Auth
       {
         path:'',
         component:AuthLayoutComponent,
@@ -107,6 +110,13 @@ export const routes: Routes =  [
           {path:'creer-passe', component:CreerPasseComponent},
           {path:'contacter-equipe', component:ContacterEquipeComponent},
         ]
+      },
+
+
+      // 2 Interface 
+      {
+        path:'interface',
+        component:InterfaceLayoutComponent,
       },
 
 
