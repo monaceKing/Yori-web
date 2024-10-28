@@ -49,7 +49,7 @@
 
   .dropdown-menu {
     display: none; /* Masque le menu par défaut */
-    position: absolute;
+    /* position: absolute; */
     top: 100%; /* Aligne le menu directement sous le bouton */
     right: 0; /* Aligne le menu à droite du bouton */
     background-color: #ffffff; /* Fond du menu déroulant */

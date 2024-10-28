@@ -1,26 +1,31 @@
 .container{
-    /* padding-top: 20px; */
-    background-color: white;
-    justify-content: center;
-    /* margin-bottom: 0; */
+    margin-top: 1000px;
+    background-color: #77B5FE;
 }
 
-
-.card {
+.top{
     display: flex;
-    flex-direction: column; /* Aligne les enfants en colonne */
-    justify-content: center; /* Centre verticalement */
-    align-items: center; /* Centre horizontalement */
-    text-align: center; /* Centre le texte */
+    gap: 100px;
+    margin-left: 50px;
 }
 
-
-.bottom{
-    justify-content: center;
-    text-align: center;
+.button{
+    margin-top: 15px;
+    margin-left: 150px;
 }
 
-a{
-    color: #77B5FE;
-    text-decoration: none;
+.button button{
+    background-color: #4099FF;
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    color: white;
+}
+
+.Copyright{
+    margin-left: 45px;
+}
+
+P{
+    color: white;
 }

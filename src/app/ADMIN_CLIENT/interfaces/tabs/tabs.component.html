@@ -1,56 +1,112 @@
-<!-- <body> -->
     <div class="tab-container">
       <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="activeTabIndex">
         <mat-tab>
-          <ng-template mat-tab-label>
+          <ng-template mat-tab-label class="ng-template">
             <div class="circle-container">
-              <div class="circle" [ngClass]="{'active': activeTabIndex >= 0}"><mat-icon>event</mat-icon></div>
-              <div class="circle-title">Localisation</div>
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 0}"><mat-icon>edit_calendar</mat-icon></div>
+              <div class="circle-title">Réservations</div>
             </div>
           </ng-template>
-          <h3>1</h3>
+          <app-reservation></app-reservation>
         </mat-tab>
   
-        <mat-tab>
-          <ng-template mat-tab-label>
+        <!-- <mat-tab>
+          <ng-template mat-tab-label class="ng-template" >
             <div class="circle-container">
               <div class="circle" [ngClass]="{'active': activeTabIndex >= 1}"><mat-icon> border_color</mat-icon></div>
-              <div class="circle-title">nom de la structure</div>
+              <div class="circle-title">Etablissement</div>
+            </div>
+          </ng-template> 
+           <h3>2</h3>
+        </mat-tab> -->
+
+        <mat-tab>
+          <ng-template mat-tab-label class="ng-template">
+            <div class="circle-container" >
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 1}">
+                <mat-icon>border_color</mat-icon>
+              </div>
+              <div class="circle-title">Etablissement</div>
+              <!-- <mat-form-field *ngIf="selectOpen">
+                <mat-select (selectionChange)="onSelectSubTab($event.value)" (closed)="selectOpen = false">
+                  <mat-option value="sub1">Sub Tab 1</mat-option>
+                  <mat-option value="sub2">Sub Tab 2</mat-option>
+                </mat-select>
+              </mat-form-field> -->
             </div>
           </ng-template>
-          <h3>2</h3>
+          
+          <!-- <mat-tab-group *ngIf="activeSubTab">
+            <mat-tab *ngIf="activeSubTab === 'sub1'">
+              <p>Content for Sub Tab 1</p>
+            </mat-tab>
+            <mat-tab *ngIf="activeSubTab === 'sub2'">
+              <p>Content for Sub Tab 2</p>
+            </mat-tab>
+          </mat-tab-group> -->
+          <app-etablissement></app-etablissement>
         </mat-tab>
+        
   
         <mat-tab>
-          <ng-template mat-tab-label>
+          <ng-template mat-tab-label class="ng-template">
             <div class="circle-container">
               <div class="circle" [ngClass]="{'active': activeTabIndex >= 2}"><mat-icon> mail_outline</mat-icon></div>
-              <div class="circle-title">Commodités</div>
+              <div class="circle-title">Boite de reception</div>
             </div>
           </ng-template>
-          <h3>3</h3>
+         <app-boite-reception></app-boite-reception>
         </mat-tab>
   
         <mat-tab>
-          <ng-template mat-tab-label>
+          <ng-template mat-tab-label class="ng-template">
             <div class="circle-container">
-              <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">4</div>
-              <div class="circle-title">Petit-dejeuner</div>
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">
+                <mat-icon>favorite</mat-icon>
+              </div>
+              <div class="circle-title">Commentaires clients</div>
             </div>
           </ng-template>
-          <h3>4</h3>
+          <app-commentaires></app-commentaires>
         </mat-tab>
-        <mat-tab>
-          <ng-template mat-tab-label>
+        <mat-tab> 
+          <ng-template mat-tab-label class="ng-template">
             <div class="circle-container">
               <div class="circle" [ngClass]="{'active': activeTabIndex >= 4}"><mat-icon>trending_up</mat-icon></div>
-              <div class="circle-title">Parking</div>
+              <div class="circle-title">Analyse</div>
             </div>
           </ng-template>
-          <h3>5</h3>
+          <app-analyse></app-analyse>
         </mat-tab>
+
+        <!-- Tab Menu déroulant -->
+        <mat-tab>
+          <ng-template mat-tab-label class="ng-template">
+            <div class="circle-container">
+              <div class="circle" (click)="openSelect(select)">
+                <mat-icon>menu</mat-icon>
+              </div>
+              <select #select (change)="showComponent($event)" style="background-color: #77B5FE; color: white; border: none;">
+                <option value="" disabled [selected]="currentComponent === null">Choisissez</option>
+                <option value="composant1" [selected]="currentComponent === 'composant1'">Composant 1</option>
+                <option value="composant2" [selected]="currentComponent === 'composant2'">Composant 2</option>
+                <option value="composant3" [selected]="currentComponent === 'composant3'">Composant 3</option>
+              </select>
+            </div>
+          </ng-template>
+          
+          
+          <div *ngIf="currentComponent">
+            <ng-container [ngSwitch]="currentComponent">
+              <h1 *ngSwitchCase="'composant1'">Compo1</h1>
+              <h1 *ngSwitchCase="'composant2'">Compo2</h1>
+              <h1 *ngSwitchCase="'composant3'">Compo3</h1>
+            </ng-container>
+          </div>
+        </mat-tab>
+
       </mat-tab-group>
-      <div class="tab-navigation tab-navigation-buttons" *ngIf="activeTabIndex < 7" 
+      <!-- <div class="tab-navigation tab-navigation-buttons" *ngIf="activeTabIndex < 7" 
        [ngClass]="{
          'style0': activeTabIndex === 0,
          'style1': activeTabIndex === 1,
@@ -66,7 +122,6 @@
     <button (click)="nextTab()">
       prochaine étape <span class="chevron">&#9654;</span>
     </button>
+  </div> -->
   </div>
-  </div>
-  <!-- </body> -->
   

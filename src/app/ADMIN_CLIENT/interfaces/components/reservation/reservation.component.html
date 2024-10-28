@@ -1,0 +1,107 @@
+<div class="container">
+    <h2>Réservations</h2>
+    <div class="filtre">
+      <div class="labels">
+          <label for="statut">Statut :</label>
+          <label for="dateDebut">Date de début :</label>
+          <label for="dateFin">Date de fin :</label>
+          <label for="filtre" (click)="toggleCheckboxes()">Filtre :</label>
+      </div>
+      <div class="inputs">
+          <select id="statut" [(ngModel)]="selectedStatut">
+              <option *ngFor="let statut of statutsFiltres" [value]="statut">{{ statut }}</option>
+          </select>
+        
+          <input type="date" id="dateDebut" [(ngModel)]="dateDebut" />
+          <input type="date" id="dateFin" [(ngModel)]="dateFin" />
+          
+          <select id="statut2" [(ngModel)]="selectedStatut2">
+              <!-- <option *ngFor="let statut of statutsFiltres2" [value]="statut">{{ statut }}</option> -->
+               <option value=""><label for=""><input type="checkbox" name="" id="">Monace</label></option>
+          </select>
+          <button type="button">Voir les résultats</button>
+      </div>
+
+      <div *ngIf="showCheckboxes" class="checkboxes">
+          <div *ngFor="let statut of statutsFiltres">
+          <label>
+              <input type="checkbox" [value]="'Tous'" /> Monace
+          </label>
+          <label>
+              <input type="checkbox" [value]="'Réservation'" /> Réservation
+          </label>
+          <label>
+              <input type="checkbox" [value]="'Arrivées'" /> Arrivées
+          </label>
+          <label>
+              <input type="checkbox" [value]="'Départs'" /> Départs
+          </label>
+          <label>
+              <input type="checkbox" [value]="'en_cours'" /> Séjour en cours
+          </label>
+          <label>
+              <input type="checkbox" [value]="'A_venir'" /> A venir
+          </label>
+          <label>
+              <input type="checkbox" [value]="'Annulées'" /> Annulées
+          </label>
+          </div>
+      </div>
+    </div>
+
+
+
+
+  <!-- Nouvelle div pour le statut et le nombre de résultats -->
+  <div class="resultats-info">
+      <div>
+        {{ selectedStatut }}
+      ({{ getClientsFiltres().length }})
+      </div>
+      <button (click)="printPage()">
+        <mat-icon>
+        print
+        </mat-icon>
+        Imprimer la liste des réservations
+      </button>
+  </div>
+
+  <table>
+      <thead>
+          <tr>
+              <th>Nom du client</th>
+              <th>Arrivée</th>
+              <th>Départ</th>
+              <th>Hébergement</th>
+              <th>Réservé le</th>
+              <th>Statuts</th>
+              <th>Tarif</th>
+              <th>Commission</th>
+              <th>Durée</th>
+              <th>Numéro de réservation</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let client of getClientsFiltres()">
+              <td>{{ client.nom }} <br> {{client.personne}} personne(s) </td>
+              <td>{{ client.arrivee }}</td>
+              <td>{{ client.depart }}</td>
+              <td>{{ client.hebergement }}</td>
+              <td>{{ client.reserveLe }}</td>
+              <td>{{ client.statuts }}</td>
+              <td>{{ client.tarif }}</td>
+              <td>{{ client.commission }}</td>
+              <td>{{ client.duree }}</td>
+              <td>{{ client.numeroReservation }}</td>
+          </tr>
+          <tr>
+              <td colspan="10" style="text-align: center;">Pagination ici</td>
+          </tr>
+      </tbody>
+  </table>
+  <div class="totaux">
+    <p>Total Commission : <strong>{{ totalCommission() | currency }}</strong></p>
+    <p>Total Tarif : <strong>{{ totalTarif() | currency }}</strong></p>
+</div>
+
+</div>

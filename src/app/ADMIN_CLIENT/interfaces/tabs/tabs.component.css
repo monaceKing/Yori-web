@@ -59,6 +59,7 @@
     background-color:#77B5FE;
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
   }
   
   .circle-container {
@@ -66,13 +67,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+  }
+
+  .mat-form-field {
+    position: absolute; /* Positionne le champ de formulaire par rapport à son conteneur */
+    top: 100%; /* Positionne juste en dessous de la circle-container */
+    left: 0; /* Aligne à gauche */
+    z-index: 1000; /* Assure que le select est au-dessus */
   }
   
-  .circle {
-    width: 30px;
+  mat-icon{
+    width: 50px;
     height: 30px;
-    /* border-radius: 50%; */
-    background-color: rgb(202, 14, 14);
+  }
+
+  .circle {
     color: white;
     display: flex;
     align-items: center;
@@ -81,9 +91,7 @@
     transition: background-color 0.3s ease;
   }
   
-  /* .circle.active {
-    background-color: #77B5FE;
-  } */
+
   
   .circle-title {
     margin-top: 5px;
@@ -105,3 +113,5 @@
   .tab-navigation.style0{
     margin-left: 450px;
   }
+
+

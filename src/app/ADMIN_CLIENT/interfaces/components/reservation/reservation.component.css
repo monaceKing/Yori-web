@@ -1,0 +1,61 @@
+.container {
+   display: flex; 
+   flex-direction: column; 
+   align-items: center; 
+   justify-content: center; 
+   text-align: center;
+}
+ 
+ 
+ .table{
+   border: 1px solid black;
+ }
+
+ .filtre {
+   display: flex;
+   flex-direction: column; /* Les labels et inputs sont en colonnes */
+   align-items: flex-start; /* Aligne les éléments au début */
+   margin-bottom: 20px; /* Espacement sous le filtre */
+}
+
+.labels {
+   display: flex; /* Aligne les labels sur la même ligne */
+   gap: 20px; /* Espacement entre les labels */
+}
+
+.inputs {
+   display: flex; /* Aligne les inputs sur la même ligne */
+   gap: 20px; /* Espacement entre les inputs */
+   margin-top: 10px; /* Espacement au-dessus des inputs */
+}
+
+
+ table {
+   border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th, td{
+   padding: 6px 10px;
+}
+
+tr{
+   border: 1px solid #000000; 
+}
+
+.resultats-info{
+   display: flex;
+   gap: 700px;
+ }
+
+.totaux{
+   width: 82%;
+   background-color: white;
+   display: flex;
+   gap: 160px;
+   justify-content: center;
+}
