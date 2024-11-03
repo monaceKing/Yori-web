@@ -1,9 +1,9 @@
 import { MatFormField } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, HostListener, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatProgressBar } from '@angular/material/progress-bar';
-import { MatTab, MatTabChangeEvent, MatTabGroup, MatTabsModule } from '@angular/material/tabs';
+import { MatTab, MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 import { Router, RouterOutlet } from '@angular/router';
 import { MatOptgroup, MatOption, MatSelect } from '@angular/material/select';
 import { ReservationComponent } from "../components/reservation/reservation.component";
@@ -11,6 +11,7 @@ import { EtablissementComponent } from '../components/etablissement/etablissemen
 import { BoiteReceptionComponent } from "../components/boite-reception/boite-reception.component";
 import { CommentairesComponent } from "../components/commentaires/commentaires.component";
 import { AnalyseComponent } from "../components/analyse/analyse.component";
+import { Footer2Component } from "../../layout/footer2/footer2.component";
 
 @Component({
   selector: 'app-tabs',
@@ -31,7 +32,8 @@ import { AnalyseComponent } from "../components/analyse/analyse.component";
     EtablissementComponent,
     BoiteReceptionComponent,
     CommentairesComponent,
-    AnalyseComponent
+    AnalyseComponent,
+    Footer2Component
 ],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.css'

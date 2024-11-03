@@ -6,7 +6,7 @@
           <label for="dateDebut">Date de début :</label>
           <label for="dateFin">Date de fin :</label>
           <label for="filtre" (click)="toggleCheckboxes()">Filtre :</label>
-      </div>
+      </div> 
       <div class="inputs">
           <select id="statut" [(ngModel)]="selectedStatut">
               <option *ngFor="let statut of statutsFiltres" [value]="statut">{{ statut }}</option>
@@ -18,11 +18,16 @@
           <select id="statut2" [(ngModel)]="selectedStatut2">
               <!-- <option *ngFor="let statut of statutsFiltres2" [value]="statut">{{ statut }}</option> -->
                <option value=""><label for=""><input type="checkbox" name="" id="">Monace</label></option>
+               <option value=""><label for=""><input type="checkbox" name="" id="">King</label></option>
+               <option value=""><label for=""><input type="checkbox" name="" id="">AKG</label></option>
+               <option value=""><label for=""><input type="checkbox" name="" id="">Zero D</label></option>
+               <option value=""><label for=""><input type="checkbox" name="" id="">Nous</label></option>
+               <option value=""><label for=""><input type="checkbox" name="" id="">Ombrre et lumière</label></option>
           </select>
           <button type="button">Voir les résultats</button>
       </div>
 
-      <div *ngIf="showCheckboxes" class="checkboxes">
+      <!-- <div *ngIf="showCheckboxes" class="checkboxes">
           <div *ngFor="let statut of statutsFiltres">
           <label>
               <input type="checkbox" [value]="'Tous'" /> Monace
@@ -46,12 +51,8 @@
               <input type="checkbox" [value]="'Annulées'" /> Annulées
           </label>
           </div>
-      </div>
+      </div> -->
     </div>
-
-
-
-
   <!-- Nouvelle div pour le statut et le nombre de résultats -->
   <div class="resultats-info">
       <div>
@@ -66,38 +67,47 @@
       </button>
   </div>
 
-  <table>
-      <thead>
-          <tr>
-              <th>Nom du client</th>
-              <th>Arrivée</th>
-              <th>Départ</th>
-              <th>Hébergement</th>
-              <th>Réservé le</th>
-              <th>Statuts</th>
-              <th>Tarif</th>
-              <th>Commission</th>
-              <th>Durée</th>
-              <th>Numéro de réservation</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let client of getClientsFiltres()">
-              <td>{{ client.nom }} <br> {{client.personne}} personne(s) </td>
-              <td>{{ client.arrivee }}</td>
-              <td>{{ client.depart }}</td>
-              <td>{{ client.hebergement }}</td>
-              <td>{{ client.reserveLe }}</td>
-              <td>{{ client.statuts }}</td>
-              <td>{{ client.tarif }}</td>
-              <td>{{ client.commission }}</td>
-              <td>{{ client.duree }}</td>
-              <td>{{ client.numeroReservation }}</td>
-          </tr>
-          <tr>
-              <td colspan="10" style="text-align: center;">Pagination ici</td>
-          </tr>
-      </tbody>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom du client</th>
+        <th>Arrivée</th>
+        <th>Départ</th>
+        <th>Hébergement</th>
+        <th>Réservé le</th>
+        <th>Statuts</th>
+        <th>Tarif</th>
+        <th>Commission</th>
+        <th>Durée</th>
+        <th>Numéro de réservation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of paginatedClients">
+        <td>{{ client.nom }} <br> {{client.personne}} personne(s) </td>
+        <td>{{ client.arrivee }}</td>
+        <td>{{ client.depart }}</td>
+        <td>{{ client.hebergement }}</td>
+        <td>{{ client.reserveLe }}</td>
+        <td>{{ client.statuts }}</td>
+        <td>{{ client.tarif }}</td>
+        <td>{{ client.commission }}</td>
+        <td>{{ client.duree }}</td>
+        <td><a href="">{{ client.numeroReservation }}</a></td>
+      </tr>
+      <tr>
+        <td colspan="10" class="td-pag">
+              <div>
+                <button class="btn-pag" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">&lt; Précédent</button>|
+                <span>Page</span>
+                |<button class="btn-pag" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Suivant &gt;</button>
+                <select id="itemsPerPage" (change)="onItemsPerPageChange($event)">
+                    <option *ngFor="let option of itemsPerPageOptions" [value]="option">Afficher {{ option }} réservations</option>
+                </select>
+              </div>
+        </td>
+      </tr>
+    </tbody>
   </table>
   <div class="totaux">
     <p>Total Commission : <strong>{{ totalCommission() | currency }}</strong></p>

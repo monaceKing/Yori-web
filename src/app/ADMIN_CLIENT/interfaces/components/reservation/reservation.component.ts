@@ -171,8 +171,12 @@ export class ReservationComponent {
     selectedStatut: string = 'Tous';
     dateDebut: string = '';
     dateFin: string = '';
-    showCheckboxes: boolean = false; // Pour contrôler l'affichage des cases à cocher
-    selectedStatuts: string[] = []; // Pour stocker les statuts sélectionnés
+    showCheckboxes: boolean = false; 
+    selectedStatuts: string[] = [];
+    currentPage: number = 1;
+    itemsPerPage: number = 5;
+    itemsPerPageOptions: number[] = [5, 10, 50]; // Options de pagination
+
 
     statutsFiltres2: string[] =  ['Plus de filtres','Tous', 'Réservation', 'Arrivées', 'Départs', 'Séjour en cours', 'A venir', 'Annulées'];
     selectedStatut2: string = 'Plus de filtres';
@@ -187,10 +191,6 @@ export class ReservationComponent {
             const isDateValide = (!this.dateDebut || dateArrivee >= dateDebutObj) && (!this.dateFin || dateArrivee <= dateFinObj);
 
             return isStatutValide && isDateValide;
-            // const isStatutValide = this.selectedStatuts.length === 0 || this.selectedStatuts.includes(client.statuts);
-            // const isDateValide = (!this.dateDebut || dateArrivee >= dateDebutObj) && (!this.dateFin || dateArrivee <= dateFinObj);
-
-            // return isStatutValide && isDateValide;
         });
     }
 
@@ -224,7 +224,29 @@ export class ReservationComponent {
         this.selectedStatuts = this.selectedStatuts.filter(s => s !== statut);
     }
     console.log(this.selectedStatuts); // Pour déboguer et voir les statuts sélectionnés
-}
+  }
+
+  get paginatedClients() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    return this.getClientsFiltres().slice(start, start + this.itemsPerPage);
+  }
+
+  get totalPages() {
+    return Math.ceil(this.getClientsFiltres().length / this.itemsPerPage);
+  }
+
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+
+  onItemsPerPageChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.itemsPerPage = Number(selectElement.value);
+    this.currentPage = 1; // Réinitialiser à la première page
+  }
+
 
 
  
