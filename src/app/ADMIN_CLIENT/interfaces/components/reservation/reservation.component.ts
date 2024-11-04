@@ -26,7 +26,8 @@ interface Client {
   imports: [
     CommonModule,
     FormsModule,
-    MatIcon
+    MatIcon,
+    CommonModule
   ],
   templateUrl: './reservation.component.html',
   styleUrl: './reservation.component.css'
@@ -92,7 +93,7 @@ export class ReservationComponent {
       depart: '2024-11-25',
       hebergement: 'Villa JKL',
       reserveLe: '2024-10-23',
-      statuts: 'Annulé',
+      statuts: 'Annulées',
       tarif: '700€',
       commission: '70€',
       duree: '5 jours',
@@ -175,7 +176,9 @@ export class ReservationComponent {
     selectedStatuts: string[] = [];
     currentPage: number = 1;
     itemsPerPage: number = 5;
-    itemsPerPageOptions: number[] = [5, 10, 50]; // Options de pagination
+    itemsPerPageOptions: number[] = [5, 10, 50]; 
+    selectedClient: any = null;
+    showDetails: boolean = false;
 
 
     statutsFiltres2: string[] =  ['Plus de filtres','Tous', 'Réservation', 'Arrivées', 'Départs', 'Séjour en cours', 'A venir', 'Annulées'];
@@ -248,6 +251,17 @@ export class ReservationComponent {
   }
 
 
+    // Méthode appelée lors du clic sur le lien
+    afficherDetails(client: Client) {
+      this.selectedClient = client;
+      this.showDetails = true; // On affiche la div conditionnée
+    }
+
+      // Méthode pour revenir à la vue par défaut
+  revenir() {
+    this.selectedClient  = null;
+    this.showDetails = false; // On cache la div conditionnée
+  }
 
  
 }

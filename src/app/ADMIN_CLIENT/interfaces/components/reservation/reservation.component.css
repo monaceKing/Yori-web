@@ -1,4 +1,4 @@
-.container {
+.first {
    display: flex; 
    flex-direction: column; 
    align-items: center; 
@@ -38,21 +38,91 @@
     width: auto;
 }
 
-th, td{
+
+.table2 {
+        border:1px solid #000000;
+        border-collapse: collapse; /* Pour éviter les espaces entre les cellules */
+        width: 50%; /* Si vous voulez que le tableau prenne toute la largeur */
+        margin-left: 30px;
+        margin-top: 10px;
+        background-color: white;
+    }
+    .table2 td {
+        padding: 5px; /* Réduire le padding des cellules */
+        padding-left: 20px;
+        font-size: 12px; /* Réduire la taille de la police */
+        line-height: 1.2; /* Ajuster la hauteur des lignes */
+        vertical-align: top; /* Aligner le contenu en haut de la cellule */
+    }
+    .table2 tr {
+        height: 20px; /* Définir une hauteur spécifique pour les lignes */
+    }
+
+    .retour{
+      margin-left: 30px;
+    }
+
+    .span{
+     margin-left: 420px;
+    }
+
+
+    .printPage, .printPage2{
+      display: inline-flex;  /* Utilise flexbox pour aligner horizontalement */
+      align-items: center;   /* Aligne verticalement l'icône et le texte */
+      background-color: initial; /* Exemple de couleur de fond pour le bouton */
+      padding: 8px 16px;  /* Espacement interne du bouton */
+      border: none;  /* Enlève la bordure du bouton */
+      cursor: pointer;  /* Change le curseur lorsque la souris est dessus */
+      text-decoration: underline;
+      /* margin-right: 20px; */
+    }
+
+
+
+    .printPage mat-icon, .printPage2 mat-icon {
+      font-size: 20px;  /* Taille de l'icône */
+      margin-right: 5px;  /* Espace entre l'icône et le texte */
+  }
+  
+
+
+    .revenir{
+      border: none;
+      text-decoration: underline;
+    }
+
+
+    .fact-annulee{
+      background-color: #FFEDED;
+      border: 1px solid #FF9797;
+      width: 48.7%;
+      margin-left: 30px;
+      margin-top: 10px;
+      padding: 5px 0;
+      padding-left: 15px;
+      font-weight: bold;
+    }
+
+
+.table th, td{
    padding: 20px 14px;
 }
 
-tr{
+.table tr{
    border: 1px solid #000000; 
 }
 
-a{
+.open-div2{
    color: #77B5FE;
+   text-decoration: underline;
+   cursor: pointer;
 }
 
 .resultats-info{
    display: flex;
-   gap: 700px;
+   gap: 880px;
+   margin-left: 15px;
  }
 
 .totaux{
@@ -82,4 +152,12 @@ a{
    align-items: left; 
    justify-content: left; 
    text-align: left;
+}
+
+button{
+   cursor: pointer;
+}
+
+a{
+   color: #77B5FE;
 }
