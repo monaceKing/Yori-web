@@ -12,12 +12,41 @@
    flex-direction: column; /* Les labels et inputs sont en colonnes */
    align-items: flex-start; /* Aligne les éléments au début */
    margin-bottom: 20px; /* Espacement sous le filtre */
+   margin-left: 15px;
+}
+
+
+.titre{
+   display: flex; 
+   flex-direction: column;
+   text-align: left;
+   margin-left: 15px;
 }
 
 .labels {
    display: flex; /* Aligne les labels sur la même ligne */
-   gap: 20px; /* Espacement entre les labels */
+   gap: 80px; /* Espacement entre les labels */
 }
+
+/* .label-style-1 {
+   color: red;
+ } */
+ 
+ .label-style-2 {
+   /* color: blue; */
+   margin-left: 2px;
+ }
+ 
+ .label-style-3 {
+   /* color: green; */
+   margin-left: 37px;
+ }
+ 
+ .label-style-4 {
+   color: #77B5FE;
+   margin-left: 35px;
+ }
+ 
 
 .inputs {
    display: flex; /* Aligne les inputs sur la même ligne */
@@ -25,6 +54,17 @@
    margin-top: 10px; /* Espacement au-dessus des inputs */
 }
 
+#statut2{
+   border: solid #77B5FE;
+   color: #77B5FE;
+}
+
+
+.voir{
+   background-color: #77B5FE;
+   color: white;
+   border: solid #77B5FE;
+}
 
  .table {
     border-collapse: collapse;
@@ -161,3 +201,56 @@ button{
 a{
    color: #77B5FE;
 }
+
+
+
+.custom-select {
+   position: relative;
+   display: inline-block;
+   width: 300px;
+ }
+ 
+ .selected-options {
+   padding: 8px;
+   border: 1px solid #ccc;
+   cursor: pointer;
+   background-color: #fff;
+ }
+ 
+ .options-dropdown {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   right: 0;
+   border: 1px solid #ccc;
+   background-color: white;
+   padding: 8px;
+   max-height: 200px;
+   overflow-y: auto;
+   display: block;  /* Par défaut, le display:block aligne les éléments en colonne */
+ }
+
+
+ .checkbox-item {
+   display: flex; /* Utilise flex pour aligner les checkboxes avec leur texte */
+   align-items: center; /* Aligne verticalement l'input et le texte */
+   margin-bottom: 10px; /* Espacement entre chaque checkbox */
+ }
+ 
+ /* .options-dropdown label {
+   display: block;
+   margin: 4px 0;
+ } */
+ 
+ .options-dropdown input {
+   margin-right: 8px;
+ }
+ 
+ .selected-options span {
+   color: #888;
+ }
+ 
+ .selected-options span.ng-star-inserted {
+   color: black;
+ }
+ 

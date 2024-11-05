@@ -1,14 +1,16 @@
 <div class="container">
     <div class="first" *ngIf="!showDetails">
         <div>
-            <h2>Réservations</h2>
+            <h2 class="titre">Réservations</h2>
             <div class="filtre">
-              <div class="labels">
-                  <label for="statut">Statut :</label>
-                  <label for="dateDebut">Date de début :</label>
-                  <label for="dateFin">Date de fin :</label>
-                  <label for="filtre" (click)="toggleCheckboxes()">Filtre :</label>
-              </div> 
+                <div class="labels">
+                    <label *ngFor="let label of labels; let i = index" 
+                           [ngClass]="getLabelClass(i)" 
+                           [attr.for]="label.for" 
+                           (click)="toggleCheckboxes()">
+                      {{ label.text }}
+                    </label>
+                  </div>
               <div class="inputs">
                   <select id="statut" [(ngModel)]="selectedStatut">
                       <option *ngFor="let statut of statutsFiltres" [value]="statut">{{ statut }}</option>
@@ -17,16 +19,33 @@
                   <input type="date" id="dateDebut" [(ngModel)]="dateDebut" />
                   <input type="date" id="dateFin" [(ngModel)]="dateFin" />
                   
-                  <select id="statut2" [(ngModel)]="selectedStatut2">
-                      <!-- <option *ngFor="let statut of statutsFiltres2" [value]="statut">{{ statut }}</option> -->
-                       <option value=""><label for=""><input type="checkbox" name="" id="">Monace</label></option>
-                       <option value=""><label for=""><input type="checkbox" name="" id="">King</label></option>
-                       <option value=""><label for=""><input type="checkbox" name="" id="">AKG</label></option>
-                       <option value=""><label for=""><input type="checkbox" name="" id="">Zero D</label></option>
-                       <option value=""><label for=""><input type="checkbox" name="" id="">Nous</label></option>
-                       <option value=""><label for=""><input type="checkbox" name="" id="">Ombrre et lumière</label></option>
-                  </select>
-                  <button type="button">Voir les résultats</button>
+                  <div class="custom-select" (click)="toggleDropdown($event)">
+                    <div class="selected-options">
+                      <span *ngIf="selectedStatut2.length === 0">Statut de la réservation</span>
+                      <span *ngIf="selectedStatut2.length > 0">
+                        {{ selectedStatut2.join(', ') }}
+                      </span>
+                    </div>
+                    
+                    <div class="options-dropdown" *ngIf="dropdownOpen">
+                      <label *ngFor="let statut of statutsFiltres2" class="checkbox-item">
+                        <input type="checkbox" 
+                               [value]="statut" 
+                               [(ngModel)]="checkboxValues[statut]"
+                               (change)="onCheckboxChange(statut)">
+                        {{ statut }}
+                      </label>
+                  
+                      <!-- <label class="checkbox-item">
+                        <input type="checkbox" 
+                               [(ngModel)]="checkboxValues['Ombrre et lumière']"
+                               (change)="onCheckboxChange('Ombrre et lumière')">
+                        Ombrre et lumière
+                      </label> -->
+                    </div>
+                  </div>
+                  
+                  <button type="button" class="voir">Voir les résultats</button>
               </div>
             </div>
             <div class="resultats-info">

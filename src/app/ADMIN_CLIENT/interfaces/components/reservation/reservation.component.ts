@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 
@@ -33,7 +33,12 @@ interface Client {
   styleUrl: './reservation.component.css'
 })
 
-export class ReservationComponent {
+export class ReservationComponent implements OnInit, OnDestroy {
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {}
+
+
     clients: Client[] = [
     {
       nom: 'Jean Dupont',
@@ -179,10 +184,51 @@ export class ReservationComponent {
     itemsPerPageOptions: number[] = [5, 10, 50]; 
     selectedClient: any = null;
     showDetails: boolean = false;
+    statutsFiltres2: string[] =  ['Tous', 'Réservation', 'Arrivées', 'Départs', 'Séjour en cours', 'A venir', 'Annulées'];
+    selectedStatut2: string[] = [];
+    checkboxValues: { [key: string]: boolean } = {};
+    dropdownOpen = false;
 
+  // Gérer le changement de chaque checkbox
+  onCheckboxChange(statut: string) {
+    if (this.checkboxValues[statut]) {
+      this.selectedStatut2.push(statut);  // Ajouter à la sélection
+    } else {
+      const index = this.selectedStatut2.indexOf(statut);
+      if (index !== -1) {
+        this.selectedStatut2.splice(index, 1);  // Retirer de la sélection
+      }
+    }
+  }
 
-    statutsFiltres2: string[] =  ['Plus de filtres','Tous', 'Réservation', 'Arrivées', 'Départs', 'Séjour en cours', 'A venir', 'Annulées'];
-    selectedStatut2: string = 'Plus de filtres';
+      // Ouvrir/fermer le menu déroulant
+  toggleDropdown(event: MouseEvent) {
+    this.dropdownOpen = !this.dropdownOpen;
+    event.stopPropagation();  // Empêche la propagation de l'événement au document
+  }
+
+    labels = [
+      { for: 'statut', text: 'Date de ' },
+      { for: 'dateDebut', text: 'Du ' },
+      { for: 'dateFin', text: 'Au ' },
+      { for: 'filtre', text: 'Filtre ' }
+    ];
+    
+    // Fonction pour obtenir la classe dynamique
+    getLabelClass(index: number): string {
+      switch(index) {
+        case 0:
+          return 'label-style-1';
+        case 1:
+          return 'label-style-2';
+        case 2:
+          return 'label-style-3';
+        case 3:
+          return 'label-style-4';
+        default:
+          return '';
+      }
+    }
 
     getClientsFiltres() {
         return this.clients.filter(client => {
