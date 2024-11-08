@@ -20,14 +20,37 @@
                   <input type="date" id="dateFin" [(ngModel)]="dateFin" />
                   <select name="" class="select">
                     <option value="">Plus de filtres</option>
-                    <option value="">juste</option>
-                    <option value="">amour</option>
-                    <option value="">monace</option>
-                    <option value="">King</option>
-                    <option value="">Akg</option>
                   </select>
-
-                  <button type="button" class="voir">Voir les résultats</button>
+                  <button type="button" class="voir" (click)="afficherFiltre()">Voir les résultats</button>
+              </div>
+              <div *ngIf="openFiltre" class="checkbox">
+                <div class="checkbox-container">
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="tous" /> Tous
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="reservation" /> Réservation
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="arrivees" /> Arrivées
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="departures" /> Départs
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="sejour-en-cours" /> Séjour en cours
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="a-venir" /> A venir
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="annulees" /> Annulées
+                  </label>
+                </div>
+                <div>
+                  <strong><label for="search">Mots-clés</label></strong>
+                  <input type="search" name="search" id="">
+                </div>
               </div>
             </div>
             <div class="resultats-info">

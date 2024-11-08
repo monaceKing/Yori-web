@@ -185,6 +185,10 @@ export class ReservationComponent implements OnInit, OnDestroy {
     selectedClient: any = null;
     showDetails: boolean = false;
     checkboxValues: { [key: string]: boolean } = {};
+    openFiltre: boolean = false;
+    afficherFiltre() {
+    this.openFiltre = !this.openFiltre;
+  }
 
     labels = [
       { for: 'statut', text: 'Date de ' },

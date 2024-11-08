@@ -222,3 +222,38 @@ a{
   border:0.5px solid #77B5FE;
   color: #77B5FE;
 }
+
+
+.checkbox{
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  background-color: white;
+}
+
+
+.checkbox-container {
+  background-color: initial;
+  display: block;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+  gap: 15px; /* Espacement entre les cases à cocher */
+  justify-content: flex-start;
+  margin: 20px 0;
+  width: 30%;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center; /* Aligne les cases et les labels au même niveau */
+  font-size: 14px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 8px; /* Espacement entre la case à cocher et le texte */
+}
+
+/* Optionnel : ajout d'un style de survol pour les éléments */
+.checkbox-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

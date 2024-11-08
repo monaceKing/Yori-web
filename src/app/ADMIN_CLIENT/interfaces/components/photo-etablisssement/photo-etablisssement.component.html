@@ -1,35 +1,32 @@
 <div class="container">
-    <div class="haut">
-      <h3>Galerie principale (10 photos)</h3>
-      <div class="container-btn">
-        <div class="left">
-          <button>Ajouter des photos</button>
-        </div>
-        <div class="right">
-          <button>Tout sélectionner</button>
-          <button>Tout désélectionner</button>
-          <button>Supprimer</button>
-        </div>
+  <div class="gallery-container">
+    <div class="controls">
+      <div class="one-btn">
+        <button (click)="triggerFileInput()" class="add-photo-btn">
+          <i class="fa fa-plus-circle"></i> Ajouter des photos
+        </button>
+        <!-- Input file caché -->
+      <input #fileInput type="file" accept="image/*" (change)="addImage($event)" style="display: none;" />
       </div>
-      <div class="cadre">
-
+      <div class="all-btn">
+        <button class="btn-1" (click)="selectAll()">Sélectionner tout</button>
+        <button class="btn" (click)="deselectAll()">Désélectionner tout</button>
+        <button class="btn" (click)="deleteSelected()">Supprimer</button>
       </div>
     </div>
 
-    <div class="bas">
-      <h3>Chambre luxieuse</h3>
-      <div class="container-btn">
-        <div class="left">
-          <button>Ajouter des photos</button>
-        </div>
-        <div class="right">
-          <button>Tout sélectionner</button>
-          <button>Tout désélectionner</button>
-          <button>Supprimer</button>
-        </div>
-      </div>
-      <div class="cadre">
-
+    <div class="image-gallery">
+      <div *ngFor="let image of images; let i = index" class="image-item">
+        <input
+          type="checkbox"
+          [checked]="isSelected(i)"
+          (change)="toggleSelection(i)"
+          id="image-{{i}}"
+        />
+        <label for="image-{{i}}">
+          <img [src]="image" alt="Image {{i + 1}}" class="image" />
+        </label>
       </div>
     </div>
   </div>
+</div>

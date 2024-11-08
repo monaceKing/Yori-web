@@ -6,10 +6,10 @@
 
 .top-bar {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     height: 70px;
     background-color: #77B5FE;
-  } 
+  }
 
 .logo{
   padding: 10px;
@@ -17,4 +17,8 @@
 
 .dropdown{
   margin: 10px;
+}
+
+.icon{
+  color: white;
 }

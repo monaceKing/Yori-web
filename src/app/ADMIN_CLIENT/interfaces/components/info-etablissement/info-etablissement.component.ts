@@ -13,7 +13,6 @@ import { Component } from '@angular/core';
 export class InfoEtablissementComponent {
 
   showDetails: boolean = false;
-
   afficherDetails() {
     this.showDetails = !this.showDetails;
   }
