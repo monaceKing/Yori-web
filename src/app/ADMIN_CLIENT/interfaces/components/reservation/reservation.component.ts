@@ -173,39 +173,18 @@ export class ReservationComponent implements OnInit, OnDestroy {
   ];
 
 
-  statutsFiltres: string[] = ['Tous', 'Réservation', 'Arrivées', 'Départs', 'Séjour en cours', 'A venir', 'Annulées'];
+    statutsFiltres: string[] = ['Tous', 'Réservation', 'Arrivées', 'Départs', 'Séjour en cours', 'A venir', 'Annulées'];
     selectedStatut: string = 'Tous';
     dateDebut: string = '';
     dateFin: string = '';
-    showCheckboxes: boolean = false; 
+    showCheckboxes: boolean = false;
     selectedStatuts: string[] = [];
     currentPage: number = 1;
     itemsPerPage: number = 5;
-    itemsPerPageOptions: number[] = [5, 10, 50]; 
+    itemsPerPageOptions: number[] = [5, 10, 50];
     selectedClient: any = null;
     showDetails: boolean = false;
-    statutsFiltres2: string[] =  ['Tous', 'Réservation', 'Arrivées', 'Départs', 'Séjour en cours', 'A venir', 'Annulées'];
-    selectedStatut2: string[] = [];
     checkboxValues: { [key: string]: boolean } = {};
-    dropdownOpen = false;
-
-  // Gérer le changement de chaque checkbox
-  onCheckboxChange(statut: string) {
-    if (this.checkboxValues[statut]) {
-      this.selectedStatut2.push(statut);  // Ajouter à la sélection
-    } else {
-      const index = this.selectedStatut2.indexOf(statut);
-      if (index !== -1) {
-        this.selectedStatut2.splice(index, 1);  // Retirer de la sélection
-      }
-    }
-  }
-
-      // Ouvrir/fermer le menu déroulant
-  toggleDropdown(event: MouseEvent) {
-    this.dropdownOpen = !this.dropdownOpen;
-    event.stopPropagation();  // Empêche la propagation de l'événement au document
-  }
 
     labels = [
       { for: 'statut', text: 'Date de ' },
@@ -213,7 +192,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
       { for: 'dateFin', text: 'Au ' },
       { for: 'filtre', text: 'Filtre ' }
     ];
-    
+
     // Fonction pour obtenir la classe dynamique
     getLabelClass(index: number): string {
       switch(index) {
@@ -235,7 +214,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
             const dateArrivee = new Date(client.arrivee);
             const dateDebutObj = new Date(this.dateDebut);
             const dateFinObj = new Date(this.dateFin);
-            
+
             const isStatutValide = this.selectedStatut === 'Tous' || client.statuts === this.selectedStatut;
             const isDateValide = (!this.dateDebut || dateArrivee >= dateDebutObj) && (!this.dateFin || dateArrivee <= dateFinObj);
 
@@ -263,9 +242,9 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
     toggleCheckboxes() {
       this.showCheckboxes = !this.showCheckboxes;
-  }
+    }
 
-  toggleStatutSelection(statut: string, event: Event) {
+    toggleStatutSelection(statut: string, event: Event) {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox.checked) {
         this.selectedStatuts.push(statut);
@@ -273,28 +252,28 @@ export class ReservationComponent implements OnInit, OnDestroy {
         this.selectedStatuts = this.selectedStatuts.filter(s => s !== statut);
     }
     console.log(this.selectedStatuts); // Pour déboguer et voir les statuts sélectionnés
-  }
-
-  get paginatedClients() {
-    const start = (this.currentPage - 1) * this.itemsPerPage;
-    return this.getClientsFiltres().slice(start, start + this.itemsPerPage);
-  }
-
-  get totalPages() {
-    return Math.ceil(this.getClientsFiltres().length / this.itemsPerPage);
-  }
-
-  goToPage(page: number) {
-    if (page >= 1 && page <= this.totalPages) {
-      this.currentPage = page;
     }
-  }
 
-  onItemsPerPageChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.itemsPerPage = Number(selectElement.value);
-    this.currentPage = 1; // Réinitialiser à la première page
-  }
+    get paginatedClients() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      return this.getClientsFiltres().slice(start, start + this.itemsPerPage);
+    }
+
+    get totalPages() {
+      return Math.ceil(this.getClientsFiltres().length / this.itemsPerPage);
+    }
+
+    goToPage(page: number) {
+      if (page >= 1 && page <= this.totalPages) {
+        this.currentPage = page;
+      }
+    }
+
+    onItemsPerPageChange(event: Event) {
+      const selectElement = event.target as HTMLSelectElement;
+      this.itemsPerPage = Number(selectElement.value);
+      this.currentPage = 1; // Réinitialiser à la première page
+    }
 
 
     // Méthode appelée lors du clic sur le lien
@@ -304,10 +283,10 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
 
       // Méthode pour revenir à la vue par défaut
-  revenir() {
-    this.selectedClient  = null;
-    this.showDetails = false; // On cache la div conditionnée
-  }
+    revenir() {
+      this.selectedClient  = null;
+      this.showDetails = false; // On cache la div conditionnée
+    }
 
- 
+
 }

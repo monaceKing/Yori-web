@@ -1,12 +1,12 @@
 <div class="container">
     <div class="first" *ngIf="!showDetails">
-        <div>
+    <div>
             <h2 class="titre">Réservations</h2>
             <div class="filtre">
                 <div class="labels">
-                    <label *ngFor="let label of labels; let i = index" 
-                           [ngClass]="getLabelClass(i)" 
-                           [attr.for]="label.for" 
+                    <label *ngFor="let label of labels; let i = index"
+                           [ngClass]="getLabelClass(i)"
+                           [attr.for]="label.for"
                            (click)="toggleCheckboxes()">
                       {{ label.text }}
                     </label>
@@ -15,36 +15,18 @@
                   <select id="statut" [(ngModel)]="selectedStatut">
                       <option *ngFor="let statut of statutsFiltres" [value]="statut">{{ statut }}</option>
                   </select>
-                
+
                   <input type="date" id="dateDebut" [(ngModel)]="dateDebut" />
                   <input type="date" id="dateFin" [(ngModel)]="dateFin" />
-                  
-                  <div class="custom-select" (click)="toggleDropdown($event)">
-                    <div class="selected-options">
-                      <span *ngIf="selectedStatut2.length === 0">Statut de la réservation</span>
-                      <span *ngIf="selectedStatut2.length > 0">
-                        {{ selectedStatut2.join(', ') }}
-                      </span>
-                    </div>
-                    
-                    <div class="options-dropdown" *ngIf="dropdownOpen">
-                      <label *ngFor="let statut of statutsFiltres2" class="checkbox-item">
-                        <input type="checkbox" 
-                               [value]="statut" 
-                               [(ngModel)]="checkboxValues[statut]"
-                               (change)="onCheckboxChange(statut)">
-                        {{ statut }}
-                      </label>
-                  
-                      <!-- <label class="checkbox-item">
-                        <input type="checkbox" 
-                               [(ngModel)]="checkboxValues['Ombrre et lumière']"
-                               (change)="onCheckboxChange('Ombrre et lumière')">
-                        Ombrre et lumière
-                      </label> -->
-                    </div>
-                  </div>
-                  
+                  <select name="" class="select">
+                    <option value="">Plus de filtres</option>
+                    <option value="">juste</option>
+                    <option value="">amour</option>
+                    <option value="">monace</option>
+                    <option value="">King</option>
+                    <option value="">Akg</option>
+                  </select>
+
                   <button type="button" class="voir">Voir les résultats</button>
               </div>
             </div>
@@ -156,7 +138,7 @@
                         <a href="">Afficher le numéro de téléphone</a>
                     </span>
                 </td>
-                
+
             </tr>
             <tr>
                 <td>{{ selectedClient.duree }}</td>

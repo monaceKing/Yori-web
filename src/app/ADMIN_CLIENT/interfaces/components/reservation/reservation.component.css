@@ -1,11 +1,11 @@
 .first {
-   display: flex; 
-   flex-direction: column; 
-   align-items: center; 
-   justify-content: center; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
    text-align: center;
 }
- 
+
 
  .filtre {
    display: flex;
@@ -17,7 +17,7 @@
 
 
 .titre{
-   display: flex; 
+   display: flex;
    flex-direction: column;
    text-align: left;
    margin-left: 15px;
@@ -31,27 +31,28 @@
 /* .label-style-1 {
    color: red;
  } */
- 
+
  .label-style-2 {
    /* color: blue; */
    margin-left: 2px;
  }
- 
+
  .label-style-3 {
    /* color: green; */
    margin-left: 37px;
  }
- 
+
  .label-style-4 {
    color: #77B5FE;
    margin-left: 35px;
  }
- 
+
 
 .inputs {
    display: flex; /* Aligne les inputs sur la même ligne */
    gap: 20px; /* Espacement entre les inputs */
    margin-top: 10px; /* Espacement au-dessus des inputs */
+   width: 100%;
 }
 
 #statut2{
@@ -75,7 +76,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border: 1px solid black;
     background-color: white;
-    width: auto;
+    width: 90%;
 }
 
 
@@ -124,7 +125,7 @@
       font-size: 20px;  /* Taille de l'icône */
       margin-right: 5px;  /* Espace entre l'icône et le texte */
   }
-  
+
 
 
     .revenir{
@@ -150,7 +151,7 @@
 }
 
 .table tr{
-   border: 1px solid #000000; 
+   border: 1px solid #000000;
 }
 
 .open-div2{
@@ -161,8 +162,9 @@
 
 .resultats-info{
    display: flex;
-   gap: 880px;
+   gap: 820px;
    margin-left: 15px;
+   width: 100%;
  }
 
 .totaux{
@@ -188,9 +190,9 @@
 
 .td-pag{
    /* display: flex;  */
-   flex-direction: column; 
-   align-items: left; 
-   justify-content: left; 
+   flex-direction: column;
+   align-items: left;
+   justify-content: left;
    text-align: left;
 }
 
@@ -202,32 +204,10 @@ a{
    color: #77B5FE;
 }
 
-
-
 .custom-select {
    position: relative;
    display: inline-block;
    width: 300px;
- }
- 
- .selected-options {
-   padding: 8px;
-   border: 1px solid #ccc;
-   cursor: pointer;
-   background-color: #fff;
- }
- 
- .options-dropdown {
-   position: absolute;
-   top: 100%;
-   left: 0;
-   right: 0;
-   border: 1px solid #ccc;
-   background-color: white;
-   padding: 8px;
-   max-height: 200px;
-   overflow-y: auto;
-   display: block;  /* Par défaut, le display:block aligne les éléments en colonne */
  }
 
 
@@ -236,21 +216,9 @@ a{
    align-items: center; /* Aligne verticalement l'input et le texte */
    margin-bottom: 10px; /* Espacement entre chaque checkbox */
  }
- 
- /* .options-dropdown label {
-   display: block;
-   margin: 4px 0;
- } */
- 
- .options-dropdown input {
-   margin-right: 8px;
- }
- 
- .selected-options span {
-   color: #888;
- }
- 
- .selected-options span.ng-star-inserted {
-   color: black;
- }
- 
+
+
+.select{
+  border:0.5px solid #77B5FE;
+  color: #77B5FE;
+}

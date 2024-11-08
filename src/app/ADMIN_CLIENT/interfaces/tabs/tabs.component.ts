@@ -1,46 +1,44 @@
-import { MatFormField } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { MatProgressBar } from '@angular/material/progress-bar';
 import { MatTab, MatTabGroup, MatTabsModule } from '@angular/material/tabs';
-import { Router, RouterOutlet } from '@angular/router';
-import { MatOptgroup, MatOption, MatSelect } from '@angular/material/select';
 import { ReservationComponent } from "../components/reservation/reservation.component";
-import { EtablissementComponent } from '../components/etablissement/etablissement.component';
+import { InfoEtablissementComponent } from '../components/info-etablissement/info-etablissement.component';
 import { BoiteReceptionComponent } from "../components/boite-reception/boite-reception.component";
 import { CommentairesComponent } from "../components/commentaires/commentaires.component";
 import { AnalyseComponent } from "../components/analyse/analyse.component";
 import { Footer2Component } from "../../layout/footer2/footer2.component";
+import { PhotoEtablisssementComponent } from "../components/photo-etablisssement/photo-etablisssement.component";
+import { TypeEtablissementComponent } from "../components/type-etablissement/type-etablissement.component";
+import { EquipementServiceComponent } from "../components/equipement-service/equipement-service.component";
+import { HebergementsComponent } from "../components/hebergements/hebergements.component";
 
 @Component({
   selector: 'app-tabs',
   standalone: true,
   imports: [
-    RouterOutlet,
     MatTab,
     MatTabGroup,
     MatTabsModule,
-    MatProgressBar,
     CommonModule,
     MatIcon,
-    MatFormField,
-    MatSelect,
-    MatOptgroup,
-    MatOption,
     ReservationComponent,
-    EtablissementComponent,
+    InfoEtablissementComponent,
     BoiteReceptionComponent,
     CommentairesComponent,
     AnalyseComponent,
-    Footer2Component
+    Footer2Component,
+    PhotoEtablisssementComponent,
+    TypeEtablissementComponent,
+    EquipementServiceComponent,
+    HebergementsComponent
 ],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.css'
 })
 export class TabsComponent implements AfterViewInit{
 
-  constructor(private router: Router) {}
+  // constructor(private router: Router) {}
 
   ngAfterViewInit(): void {
     throw new Error('Method not implemented.');
@@ -48,11 +46,6 @@ export class TabsComponent implements AfterViewInit{
   @ViewChild(MatTabGroup) tabGroup!: MatTabGroup;
   activeTabIndex: number = 0;
 
-  // onTabChange(event: MatTabChangeEvent) {
-  //   this.activeTabIndex = event.index;
-  //   localStorage.setItem('activeTabIndex', this.activeTabIndex.toString());
-  //   this.currentComponent = null; // Réinitialise le composant sélectionné
-  // }
   onTabChange(event: any) {
     this.activeTabIndex = event.index;
 
@@ -85,24 +78,7 @@ export class TabsComponent implements AfterViewInit{
       this.selectTab(this.activeTabIndex + 1);
     }
   }
-  
 
-
-  // isMenuOpen = false;
-  // currentComponent: string | null = null;
-
-  // toggleMenu() {
-  //   this.isMenuOpen = !this.isMenuOpen;
-  // }
-
-  // showComponent(componentName: string) {
-  //   this.currentComponent = componentName;
-  //   this.isMenuOpen = false; 
-  // }
-
-  // onTabChange2(event: any) {
-  //   this.activeTabIndex = event.index;
-  // }
 
   isMenuOpen = false;
   currentComponent: string | null = null;
@@ -122,7 +98,7 @@ export class TabsComponent implements AfterViewInit{
 
     if (value) {
       this.currentComponent = value;
-      this.isMenuOpen = false; 
+      this.isMenuOpen = false;
     }
   }
 
@@ -131,6 +107,6 @@ export class TabsComponent implements AfterViewInit{
     this.isMenuOpen = false; // Ferme le menu
     this.currentComponent = null; // Réinitialise le composant sélectionné
   }
-  
+
 
 }

@@ -33,11 +33,6 @@ import { InfosUtilisateurComponent } from './ADMIN_CLIENT/components/infos-utili
 import { CreerPasseComponent } from './ADMIN_CLIENT/components/creer-passe/creer-passe.component';
 import { ContacterEquipeComponent } from './ADMIN_CLIENT/components/contacter-equipe/contacter-equipe.component';
 import { InterfaceLayoutComponent } from './ADMIN_CLIENT/interfaces/interface-layout/interface-layout.component';
-import { InfoEtablissemntComponent } from './ADMIN_CLIENT/interfaces/components/info-etablissemnt/info-etablissemnt.component';
-import { TypeEtablissementComponent } from './ADMIN_CLIENT/interfaces/components/type-etablissement/type-etablissement.component';
-import { PhotoComponent } from './ADMIN_CLIENT/interfaces/components/photo/photo.component';
-import { EquipementsComponent } from './ADMIN_CLIENT/interfaces/components/equipements/equipements.component';
-import { HebergementsComponent } from './ADMIN_CLIENT/interfaces/components/hebergements/hebergements.component';
 
 export const routes: Routes =  [
     {
@@ -86,8 +81,8 @@ export const routes: Routes =  [
     },
 
 
-    //Côté Tourisme 
-    
+    //Côté Tourisme
+
     {
       path: '',
       component: LayoutTourismComponent,
@@ -118,7 +113,7 @@ export const routes: Routes =  [
       },
 
 
-      // 2 Interface 
+      // 2 Interface
       {
         path:'interface',
         component:InterfaceLayoutComponent,
