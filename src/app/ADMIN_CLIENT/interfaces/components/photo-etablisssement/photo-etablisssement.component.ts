@@ -10,11 +10,26 @@ import { Component, ViewChild } from '@angular/core';
   templateUrl: './photo-etablisssement.component.html',
   styleUrl: './photo-etablisssement.component.css'
 })
-export class PhotoEtablisssementComponent {
-  images: string[] = [];
-  selectedImages: Set<number> = new Set(); // Utilisé pour suivre les images sélectionnées
-  @ViewChild('fileInput') fileInput: any; // Référence à l'élément input file
+export class PhotoEtablissementComponent {
+  // Tableau d'images, incluant les 5 images par défaut dans le dossier assets
+  images: string[] = [
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+    'assets/img/chambre.png',
+  ];
 
+  // Set utilisé pour suivre les images sélectionnées
+  selectedImages: Set<number> = new Set();
+
+  @ViewChild('fileInput') fileInput: any; // Référence à l'élément input file
 
   // Ajouter une image à la galerie
   addImage(event: Event): void {
@@ -25,6 +40,7 @@ export class PhotoEtablisssementComponent {
         const reader = new FileReader();
         reader.onload = (e) => {
           if (e.target?.result) {
+            // Ajouter l'image au tableau des images
             this.images.push(e.target.result as string);
           }
         };
@@ -33,11 +49,10 @@ export class PhotoEtablisssementComponent {
     }
   }
 
-
-    // Déclencher l'input file lorsqu'on clique sur le bouton
-    triggerFileInput(): void {
-      this.fileInput.nativeElement.click(); // Simule un clic sur l'input file caché
-    }
+  // Déclencher l'input file lorsqu'on clique sur le bouton
+  triggerFileInput(): void {
+    this.fileInput.nativeElement.click(); // Simule un clic sur l'input file caché
+  }
 
   // Sélectionner toutes les images
   selectAll(): void {
@@ -54,7 +69,6 @@ export class PhotoEtablisssementComponent {
     this.images = this.images.filter((_, index) => !this.selectedImages.has(index));
     this.selectedImages.clear();
   }
-
 
   // Vérifier si une image est sélectionnée
   isSelected(index: number): boolean {

@@ -18,13 +18,14 @@
 
                   <input type="date" id="dateDebut" [(ngModel)]="dateDebut" />
                   <input type="date" id="dateFin" [(ngModel)]="dateFin" />
-                  <select name="" class="select">
-                    <option value="">Plus de filtres</option>
-                  </select>
-                  <button type="button" class="voir" (click)="afficherFiltre()">Voir les résultats</button>
+                  <button type="button" class="select" (click)="afficherFiltre()">Plus de filtres</button>
+                  <button type="button" class="voir">Voir les résultats</button>
               </div>
               <div *ngIf="openFiltre" class="checkbox">
                 <div class="checkbox-container">
+                  <div>
+                    <label for="">Statut de la réservation</label>
+                  </div>
                   <label class="checkbox-item">
                     <input type="checkbox" id="tous" /> Tous
                   </label>
@@ -47,9 +48,13 @@
                     <input type="checkbox" id="annulees" /> Annulées
                   </label>
                 </div>
-                <div>
-                  <strong><label for="search">Mots-clés</label></strong>
-                  <input type="search" name="search" id="">
+                <div class="all-search">
+                  <div>
+                    <label for="search" class="lab-search">Mots-clés</label>
+                  </div>
+                  <div>
+                    <input type="search" name="search" class="input-search">
+                  </div>
                 </div>
               </div>
             </div>

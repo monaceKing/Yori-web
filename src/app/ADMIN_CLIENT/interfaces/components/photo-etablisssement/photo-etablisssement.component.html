@@ -6,7 +6,7 @@
           <i class="fa fa-plus-circle"></i> Ajouter des photos
         </button>
         <!-- Input file caché -->
-      <input #fileInput type="file" accept="image/*" (change)="addImage($event)" style="display: none;" />
+        <input #fileInput type="file" accept="image/*" (change)="addImage($event)" style="display: none;" />
       </div>
       <div class="all-btn">
         <button class="btn-1" (click)="selectAll()">Sélectionner tout</button>
@@ -15,6 +15,7 @@
       </div>
     </div>
 
+    <span>Galerie principale (10 photos)</span>
     <div class="image-gallery">
       <div *ngFor="let image of images; let i = index" class="image-item">
         <input
@@ -26,6 +27,9 @@
         <label for="image-{{i}}">
           <img [src]="image" alt="Image {{i + 1}}" class="image" />
         </label>
+      </div>
+      <div>
+        <p>Ajouter des photos</p>
       </div>
     </div>
   </div>

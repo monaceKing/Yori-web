@@ -58,6 +58,21 @@
           </ng-template>
           <app-commentaires></app-commentaires>
         </mat-tab>
+
+
+        <mat-tab>
+          <ng-template mat-tab-label class="ng-template">
+            <div class="circle-container">
+              <div class="circle" [ngClass]="{'active': activeTabIndex >= 3}">
+                <mat-icon>receipt_long</mat-icon>
+              </div>
+              <div class="circle-title">Factures</div>
+            </div>
+          </ng-template>
+          <app-factures></app-factures>
+        </mat-tab>
+
+
         <mat-tab>
           <ng-template mat-tab-label class="ng-template">
             <div class="circle-container">

@@ -8,10 +8,11 @@ import { BoiteReceptionComponent } from "../components/boite-reception/boite-rec
 import { CommentairesComponent } from "../components/commentaires/commentaires.component";
 import { AnalyseComponent } from "../components/analyse/analyse.component";
 import { Footer2Component } from "../../layout/footer2/footer2.component";
-import { PhotoEtablisssementComponent } from "../components/photo-etablisssement/photo-etablisssement.component";
+import { PhotoEtablissementComponent } from "../components/photo-etablisssement/photo-etablisssement.component";
 import { TypeEtablissementComponent } from "../components/type-etablissement/type-etablissement.component";
 import { EquipementServiceComponent } from "../components/equipement-service/equipement-service.component";
 import { HebergementsComponent } from "../components/hebergements/hebergements.component";
+import { FacturesComponent } from "../components/factures/factures.component";
 
 @Component({
   selector: 'app-tabs',
@@ -28,10 +29,11 @@ import { HebergementsComponent } from "../components/hebergements/hebergements.c
     CommentairesComponent,
     AnalyseComponent,
     Footer2Component,
-    PhotoEtablisssementComponent,
     TypeEtablissementComponent,
     EquipementServiceComponent,
-    HebergementsComponent
+    HebergementsComponent,
+    FacturesComponent,
+    PhotoEtablissementComponent
 ],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.css'
